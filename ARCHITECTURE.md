@@ -24,6 +24,7 @@ C4Context
   Rel(scc, payment, "Processes payments", "REST API")
 ```
 
+## Level 2: Container Diagram
 ```mermaid
 C4Container
   title Container diagram for Smart Campus Connect
@@ -72,7 +73,7 @@ C4Container
   Rel(campus_svc, maps, "Gets map data", "REST API")
   Rel(event_svc, email, "Sends notifications", "SMTP/API")
 ```
-
+## Level 3: Component Diagram (Academic Service)
 ```mermaid
 C4Component
   title Component diagram for Academic Service
@@ -113,7 +114,7 @@ C4Component
   Rel(submission_repo, db, "SQL")
   Rel(attendance_repo, db, "SQL")
 ```
-
+## Level 4:Code Diagram (Authentication Flow)
 ```mermaid
 sequenceDiagram
     participant Student
@@ -151,6 +152,7 @@ sequenceDiagram
     end
 ```
 
+## Level 5:Entity Relationship Diagram
 ```mermaid
 erDiagram
     USERS ||--o{ ENROLLMENTS : has
