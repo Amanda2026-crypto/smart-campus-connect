@@ -1,3 +1,7 @@
+# C4 Architecture for Smart Campus Connect
+
+This document outlines the architecture of the Smart Campus Connect system using the C4 model.
+
 ## Level 1: System Context Diagram
 
 ```mermaid
@@ -18,8 +22,6 @@ C4Context
   Rel(scc, maps, "Fetches maps & routes", "REST API")
   Rel(scc, email, "Sends notifications", "SMTP/API")
   Rel(scc, payment, "Processes payments", "REST API")
-
-## Level 2: Container Diagram
 
 ```mermaid
 C4Container
@@ -69,8 +71,6 @@ C4Container
   Rel(campus_svc, maps, "Gets map data", "REST API")
   Rel(event_svc, email, "Sends notifications", "SMTP/API")
 
-## Level 3: Component Diagram (Academic Service)
-
 ```mermaid
 C4Component
   title Component diagram for Academic Service
@@ -111,8 +111,6 @@ C4Component
   Rel(submission_repo, db, "SQL")
   Rel(attendance_repo, db, "SQL")
 
-## Level 4: Code Diagram (Authentication Flow)
-
 ```mermaid
 sequenceDiagram
     participant Student
@@ -149,7 +147,6 @@ sequenceDiagram
         MobileApp-->>Student: Invalid email/password
     end
 
-## Entity Relationship Diagram
 
 ```mermaid
 erDiagram
