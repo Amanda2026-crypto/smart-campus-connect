@@ -22,6 +22,7 @@ C4Context
   Rel(scc, maps, "Fetches maps & routes", "REST API")
   Rel(scc, email, "Sends notifications", "SMTP/API")
   Rel(scc, payment, "Processes payments", "REST API")
+```
 
 ```mermaid
 C4Container
@@ -70,6 +71,7 @@ C4Container
   Rel(academic_svc, lms, "Fetches course data", "REST API")
   Rel(campus_svc, maps, "Gets map data", "REST API")
   Rel(event_svc, email, "Sends notifications", "SMTP/API")
+```
 
 ```mermaid
 C4Component
@@ -110,6 +112,7 @@ C4Component
   Rel(assignment_repo, db, "SQL")
   Rel(submission_repo, db, "SQL")
   Rel(attendance_repo, db, "SQL")
+```
 
 ```mermaid
 sequenceDiagram
@@ -146,7 +149,7 @@ sequenceDiagram
         APIGateway-->>MobileApp: 401 Unauthorized
         MobileApp-->>Student: Invalid email/password
     end
-
+```
 
 ```mermaid
 erDiagram
@@ -266,3 +269,4 @@ erDiagram
         int max_members
         datetime created_at
     }
+```
