@@ -66,9 +66,8 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 ## 👤 Author
 
 **Amanda**
-- Student ID: [Your Student ID]
 - Course: Software Engineering
-- Institution: [Your Institution]
+- Institution: CPUT
 
 ## 📁 Repository Structure
 
