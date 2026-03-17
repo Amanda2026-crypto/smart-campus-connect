@@ -33,10 +33,7 @@ This project is achievable in one semester because:
 - Many modules follow similar patterns
 - Can use existing APIs for maps, payments, etc.
 
-**12-Week Plan:**
-- Weeks 1-2: Planning & Design (YOU ARE HERE)
-- Weeks 3-4: User system
-- Weeks 5-6: Academic features
-- Weeks 7-8: Campus navigation
-- Weeks 9-10: Social features
-- Weeks 11-12: Testing & deployment
+  
+**Project Phases:**
+- Planning & Design ✅ (Assignment 3)
+- Requirements Documentation 🚀 (Assignment 4 - Current)
