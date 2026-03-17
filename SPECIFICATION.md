@@ -34,6 +34,7 @@ This project is achievable in one semester because:
 - Can use existing APIs for maps, payments, etc.
 
   
-**Project Phases:**
-- Planning & Design ✅ (Assignment 3)
-- Requirements Documentation 🚀 (Assignment 4 - Current)
+**Project Timeline:**
+- Assignment 3: Planning & Design ✅ (Complete)
+- Assignment 4: Requirements Documentation 🚀 (YOU ARE HERE)
+- Future Assignments: Implementation, Testing, Deployment (Upcoming)
