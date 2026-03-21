@@ -418,7 +418,7 @@
 5. IT staff will maintain the production infrastructure
 
 ### Constraints
-1. Budget: $0 (open-source technologies only)
+1. Budget: R0 (open-source technologies only)
 2. Timeline: 15 assignments across the semester
 3. Team size: 1 developer
 4. Must integrate with existing university systems where possible
