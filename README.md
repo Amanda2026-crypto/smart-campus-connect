@@ -80,7 +80,5 @@ This project is created for educational purposes as part of Software Engineering
 ## 📋 Assignment 4 Deliverables
 
 - [👥 Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
-- [⚙️ Functional Requirements](FUNCTIONAL-REQUIREMENTS.md)
-- [📊 Non-Functional Requirements](NON-FUNCTIONAL-REQUIREMENTS.md)
 - [📄 System Requirements Document](SYSTEM-REQUIREMENTS-DOCUMENT.md)
 - [🤔 Reflection](REFLECTION.md)
