@@ -1,17 +1,16 @@
 # Smart Campus Connect
 
-Smart Campus Connect - A unified student lifecycle management platform for academic tracking, campus navigation, event discovery, and peer connections.
+A unified student lifecycle management platform for academic tracking, campus navigation, event discovery, and peer connections.
 
-## 📋 Project Overview
+---
+
+## Introduction
 
 Smart Campus Connect is a comprehensive platform that combines academic tracking, campus navigation, event discovery, and social features into one unified application for university students, faculty, and staff.
 
-## 🔗 Quick Links
+---
 
-- [📄 System Specification](SPECIFICATION.md)
-- [🏗️ Architecture Documentation](ARCHITECTURE.md)
-
-## 🎯 Features
+## What It Will Do (Once Completed)
 
 ### For Students
 - **Academic Dashboard**: View grades, attendance, course materials, and assignment deadlines
@@ -32,7 +31,9 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - **Event Approval**: Review and approve student events
 - **Emergency Alerts**: Send campus-wide notifications
 
-## 🛠️ Technology Stack
+---
+
+## Technology Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -45,47 +46,47 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 | Maps | Google Maps API |
 | Authentication | JWT + OAuth2 |
 
-## 📊 Database Entities (21+)
+---
+
+## Database Entities (21+)
 
 - Users, Courses, Enrollments, Assignments, Submissions, Attendance
 - Events, Event Registrations, Buildings, Rooms, Room Bookings
 - Shuttle Routes, Shuttle Locations, Study Groups, Messages
 - Lost Items, Found Items, Meal Plans, Transactions, Notifications
 
-## 📅 Development Timeline (12 Weeks)
+---
 
-| Phase | Weeks | Focus |
-|-------|-------|-------|
-| 1 | 1-2 | Planning & Design (Complete) |
-| 2 | 3-4 | User Authentication & Profiles |
-| 3 | 5-6 | Academic Core (Courses, Grades) |
-| 4 | 7-8 | Campus Services (Maps, Shuttles) |
-| 5 | 9-10 | Social Features (Events, Groups) |
-| 6 | 11-12 | Testing & Deployment |
+## Development Timeline
 
-## 👤 Author
-
-**Amanda**
-- Course: Software Engineering
-- Institution: CPUT
-
-## 📁 Repository Structure
-
-## 📝 License
-
-This project is created for educational purposes as part of Software Engineering coursework.
+| Phase | Focus | Status |
+|-------|-------|--------|
+| 1 | Planning & Design | ✅ Complete |
+| 2 | User Authentication & Profiles | ✅ Complete |
+| 3 | Academic Core (Courses, Grades) | ✅ Complete |
+| 4 | Campus Services (Maps, Shuttles) | 🚀 In Progress |
+| 5 | Social Features (Events, Groups) | ⏳ Upcoming |
+| 6 | Testing & Deployment | ⏳ Upcoming |
 
 ---
 
-## 📋 Assignment 4 Deliverables
+## Documentation
 
-- [👥 Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
-- [📄 System Requirements Document](SYSTEM-REQUIREMENTS-DOCUMENT.md)
-- [🤔 Reflection](REFLECTION.md)
+### Assignment 3
+- [System Specification](SPECIFICATION.md)
+- [C4 Architectural Diagrams](ARCHITECTURE.md)
 
-## 📋 Assignment 5 Deliverables
+### Assignment 4
+- [Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
+- [System Requirements Document](SYSTEM-REQUIREMENTS-DOCUMENT.md)
+- [Reflection - Assignment 4](REFLECTION.md)
 
-- [📊 Use Case Diagram](USE-CASE-DIAGRAM.md)
-- [📝 Use Case Specifications](USE-CASE-SPECIFICATIONS.md)
-- [🧪 Test Cases](TEST-CASES.md)
-- [🤔 Reflection](REFLECTION-ASSIGNMENT5.md)
+### Assignment 5
+- [Use Case Diagram](USE-CASE-DIAGRAM.md)
+- [Use Case Specifications](USE-CASE-SPECIFICATIONS.md)
+- [Test Cases](TEST-CASES.md)
+- [Reflection - Assignment 5](REFLECTION-ASSIGNMENT5.md)
+
+---
+
+## Repository Structure
