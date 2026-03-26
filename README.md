@@ -82,3 +82,10 @@ This project is created for educational purposes as part of Software Engineering
 - [👥 Stakeholder Analysis](STAKEHOLDER-ANALYSIS.md)
 - [📄 System Requirements Document](SYSTEM-REQUIREMENTS-DOCUMENT.md)
 - [🤔 Reflection](REFLECTION.md)
+
+## 📋 Assignment 5 Deliverables
+
+- [📊 Use Case Diagram](USE-CASE-DIAGRAM.md)
+- [📝 Use Case Specifications](USE-CASE-SPECIFICATIONS.md)
+- [🧪 Test Cases](TEST-CASES.md)
+- [🤔 Reflection](REFLECTION-ASSIGNMENT5.md)
