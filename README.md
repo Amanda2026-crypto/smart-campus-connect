@@ -57,19 +57,6 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 
 ---
 
-## Development Timeline
-
-| Phase | Focus | Status |
-|-------|-------|--------|
-| 1 | Planning & Design | ✅ Complete |
-| 2 | User Authentication & Profiles | ✅ Complete |
-| 3 | Academic Core (Courses, Grades) | ✅ Complete |
-| 4 | Campus Services (Maps, Shuttles) | 🚀 In Progress |
-| 5 | Social Features (Events, Groups) | ⏳ Upcoming |
-| 6 | Testing & Deployment | ⏳ Upcoming |
-
----
-
 ## Documentation
 
 ### Assignment 3
