@@ -73,7 +73,7 @@ graph TD
     UC8 -.->|<<includes>>| UC9
     UC11 -.->|<<includes>>| UC12
 
-```mermaid
+
 ## Written Explanation
 
 ### Key Actors and Their Roles
