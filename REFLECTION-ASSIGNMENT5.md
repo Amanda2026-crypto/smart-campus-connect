@@ -2,133 +2,146 @@
 
 **Assignment 5**
 **Amanda**
-**March 27, 2026**
+**March 26, 2026**
 
 ---
 
 ## Introduction
 
-This reflection documents the challenges I faced while translating the requirements from Assignment 4 into use case diagrams, use case specifications, and test cases for Smart Campus Connect. As a postgraduate student at CPUT, this project must reflect real university needs.
+This reflection captures the challenges faced and decisions made while translating requirements from Assignment 4 into use case diagrams, specifications, and test cases for Smart Campus Connect.
 
 ---
 
 ## Key Challenges
 
-### 1. Selecting the Right Use Cases from 18 Functional Requirements
+### 1. Identifying the Right Use Cases
 
 **The Challenge:**
-Assignment 4 had 18 functional requirements covering user management, academic features, campus services, events, social features, lost and found, and meal plans. I needed to select 8 critical use cases for specifications while ensuring all major stakeholder groups were represented.
+Assignment 4 had 18 functional requirements. I needed to select 8 critical use cases that captured the most important system behaviors while ensuring coverage across all stakeholder groups.
 
 **How I Addressed It:**
-I prioritized based on stakeholder impact:
-| Priority | Use Cases Selected |
-|----------|-------------------|
-| Student critical | View Grades, Submit Assignment, Find Study Space, Register for Event |
-| Faculty critical | Take Attendance, Create Assignment |
-| Admin critical | Approve Event |
-| Social features | Create Study Group |
+I prioritized based on:
+- **Stakeholder impact:** Use cases that affect the most stakeholders
+- **Criticality:** Features that are must-have vs nice-to-have
+- **Complexity:** Use cases that demonstrate the system's core value
 
-This gave me 8 use cases that cover the most important system functions while balancing stakeholder needs.
+The selected use cases cover:
+| Use Case | Stakeholder Priority |
+|----------|---------------------|
+| View Grades | Student, Faculty - High |
+| Submit Assignment | Student - High |
+| Take Attendance | Faculty - Medium |
+| Create Assignment | Faculty - High |
+| Find Study Space | Student - High |
+| Register for Event | Student - Medium |
+| Create Study Group | Student - Medium |
+| Approve Event | Admin - High |
 
 ---
 
-### 2. Writing Alternative Flows for South African University Context
+### 2. Writing Clear Alternative Flows
 
 **The Challenge:**
-Many requirements didn't specify what happens when things go wrong. I had to think about real scenarios at CPUT:
-- Network outages (load shedding affecting Wi-Fi)
-- Late submissions (students with connectivity issues)
-- Room booking conflicts (limited study spaces)
+Many requirements didn't specify what happens when things go wrong (e.g., network failure, invalid input). I had to infer error scenarios that real users would encounter.
 
 **How I Addressed It:**
-I added alternative flows for:
+I thought through common failure scenarios:
 | Scenario | Alternative Flow |
 |----------|-----------------|
-| Network failure | System saves draft locally, syncs when online |
-| Late submission | Mark as "Late", notify faculty, deduct points |
-| Booking conflict | Show alternative times, suggest other rooms |
-| Full course/event | Add to waitlist, notify when spot opens |
+| Network timeout | Save draft, offer retry |
+| Invalid file upload | Reject with allowed formats |
+| Late submission | Mark as late, notify faculty |
+| Duplicate QR scan | Reject second scan |
+| Room already booked | Show available alternatives |
+
+This approach ensures the system handles real-world edge cases.
 
 ---
 
-### 3. Creating Test Cases with Proper CPUT Email Formats
+### 3. Balancing Completeness vs. Clarity in Test Cases
 
 **The Challenge:**
-Initially I used generic email formats. My friend pointed out that CPUT uses specific formats:
-- Students: `studentnumber@mycput.ac.za`
-- Staff: `staffnumber@mycput.ac.za`
-
-**How I Addressed It:**
-I updated all test cases to use realistic CPUT email addresses:
-- Student: `221350977@mycput.ac.za` (my student number)
-- Faculty: `987654321@mycput.ac.za` (generic staff number)
-
-This makes the test cases more realistic for the South African university context.
-
----
-
-### 4. Ensuring Traceability Back to Assignment 4
-
-**The Challenge:**
-Each use case and test case needed to map back to specific requirements from Assignment 4. I had to ensure nothing was missed.
-
-**How I Addressed It:**
-I created traceability tables:
-| Artifact | Traceability |
-|----------|--------------|
-| Use Cases | Each maps to 1-3 functional requirements (FR-05, FR-06, etc.) |
-| Functional Tests | Each maps to specific FR (TC-FR-001 maps to FR-01) |
-| Non-Functional Tests | Each maps to specific NFR (TC-NFR-001 maps to NFR-04) |
-
-This ensures every test case can be traced back to a requirement.
-
----
-
-### 5. Balancing Test Coverage Against Time Constraints
-
-**The Challenge:**
-I needed enough test cases to show thorough testing but not so many that it becomes unmanageable.
+Test cases needed to be detailed enough to be executable but not so detailed they become unreadable. I also needed to cover both functional and non-functional requirements.
 
 **How I Addressed It:**
 I created:
-- **25 functional tests** covering all major user journeys
-- **13 non-functional tests** covering performance, security, usability, scalability, reliability
+- **18 functional tests** covering critical user journeys
+- **13 non-functional tests** covering performance, security, usability, scalability, and reliability
 
-This gives 38 total tests, which is sufficient for demonstrating test coverage.
+The non-functional tests directly address the quality attributes from Assignment 4:
+
+| Attribute | Tested In |
+|-----------|----------|
+| Performance | NFT-001, NFT-002, NFT-003, NFT-004, NFT-005 |
+| Security | NFT-006, NFT-007, NFT-008 |
+| Usability | NFT-009, NFT-010 |
+| Scalability | NFT-011 |
+| Reliability | NFT-012, NFT-013 |
+
+---
+
+### 4. Ensuring Traceability
+
+**The Challenge:**
+Each test case needed to map back to a requirement from Assignment 4. Some requirements were broad (e.g., "system shall be secure") and needed multiple test cases.
+
+**How I Addressed It:**
+I created a traceability matrix:
+
+| Requirement | Test Cases |
+|-------------|------------|
+| FR-02 (Authentication) | TC-001, TC-002, NFT-007, NFT-008 |
+| FR-06 (Assignment) | TC-007, TC-008, TC-009 |
+| FR-09 (Study Space) | TC-011, TC-012 |
+| NFR-04 (Performance) | NFT-001, NFT-002, NFT-003 |
+| NFR-07 (Security) | NFT-006, NFT-007, NFT-008 |
+
+---
+
+### 5. Consistency Across Assignments
+
+**The Challenge:**
+The use case diagram needed to align with the actors from Assignment 4 (stakeholders) and functional requirements. Any mismatch would break traceability.
+
+**How I Addressed It:**
+I mapped stakeholders to actors:
+
+| Assignment 4 Stakeholder | Assignment 5 Actor |
+|--------------------------|-------------------|
+| Student | Student |
+| Faculty Member | Faculty Member |
+| Administrator | Administrator |
+| IT Staff | IT Staff |
+| Parent | Parent |
+| Campus Security | Campus Security |
+
+All actors from Assignment 4 are represented in the use case diagram.
 
 ---
 
 ## Lessons Learned
 
-### 1. Requirements Are Not Complete Without Test Cases
-Writing test cases revealed gaps in my requirements. For example, I realized I hadn't specified what happens when a student submits an assignment after the due date. This led me to add alternative flows in the use case specifications.
+### 1. Use Cases Bridge Requirements and Implementation
+Use cases are the natural link between what stakeholders want (requirements) and what developers build (code). Getting this layer right reduces misunderstandings later.
 
-### 2. Context Matters
-The South African university context (load shedding, data costs, CPUT email formats) affects how users interact with the system. I should have considered this earlier.
+### 2. Alternative Flows Are Essential
+The basic flow shows the happy path, but alternative flows show the system is robust. I learned that thinking through failure scenarios early saves development time.
 
-### 3. Traceability Takes Time
-Creating traceability tables was tedious but necessary. Without them, it's easy to miss requirements or create orphaned test cases.
+### 3. Test Cases Are Requirements Validation
+Writing test cases forces you to ask: "How would I know this requirement is satisfied?" This reveals gaps in requirements before coding starts.
 
-### 4. Alternative Flows Are Essential
-The basic flow shows what should happen. Alternative flows show the system is robust. I learned that alternative flows often come from real user experiences, not just requirements documents.
+### 4. Traceability is Hard but Necessary
+Mapping requirements → use cases → tests ensures nothing is missed. I created a spreadsheet to track this, which helped maintain consistency.
 
 ---
 
 ## Conclusion
 
-Translating requirements to use cases and test cases requires constant back-and-forth between what stakeholders want and what the system can deliver. The challenges I faced—selecting use cases, writing alternative flows, using correct CPUT formats, ensuring traceability—all taught me that requirements engineering is not a linear process.
+Translating requirements to use cases and test cases is not mechanical—it requires judgment about what to include, how detailed to be, and how to handle edge cases. The decisions I made in this assignment prioritize:
 
-The 8 use cases and 38 test cases I produced provide a solid foundation for implementation in future assignments. The traceability matrices ensure that when a test fails, I know exactly which requirement is affected.
+- **Coverage:** Use cases across all stakeholder groups
+- **Clarity:** Step-by-step flows with clear conditions
+- **Traceability:** Clear links back to Assignment 4 requirements
+- **Practicality:** Test cases that are actually executable
 
-If I were to do this again, I would involve stakeholders earlier to validate use cases before writing specifications, and I would create test cases in parallel with requirements rather than after.
-
----
-
-## Appendix: Traceability Summary
-
-| Assignment 4 | Assignment 5 |
-|--------------|--------------|
-| 18 Functional Requirements | 25 Functional Test Cases |
-| 18 Non-Functional Requirements | 13 Non-Functional Test Cases |
-| 10 Stakeholders | 6 Actors in Use Case Diagram |
-| 5 Stakeholder Categories | 8 Critical Use Cases |
+The resulting artifacts provide a solid foundation for development and testing in future assignments.
