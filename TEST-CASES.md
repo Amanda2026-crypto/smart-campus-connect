@@ -6,7 +6,7 @@
 |--------------|----------------|-------------|-------|-----------------|----------------|--------|
 | TC-FR-001 | FR-01 - User Registration | Student registration with valid student email | 1. Open app<br>2. Click Register<br>3. Select role: Student<br>4. Enter: Amanda Duma, 123456789@mycput.ac.za, CampusConnect2025!<br>5. Confirm password<br>6. Submit | Account created; verification email sent within 60 seconds | | |
 | TC-FR-002 | FR-01 - User Registration | Faculty registration with valid staff email | 1. Open app<br>2. Click Register<br>3. Select role: Faculty<br>4. Enter: Dr John Smith, 987654321@mycput.ac.za, SecurePass2025!<br>5. Confirm password<br>6. Submit | Account created; verification email sent within 60 seconds | | |
-| TC-FR-003 | FR-01 - User Registration | Registration with invalid email domain (Gmail) | 1. Open app<br>2. Click Register<br>3. Enter: Amanda Duma, amanda.duma@gmail.com, CampusConnect2025!<br>4. Submit | Error: "Please use your CPUT email address (@mycput.ac.za)" | | |
+| TC-FR-003 | FR-01 - User Registration | Registration with invalid email domain | 1. Open app<br>2. Click Register<br>3. Enter: Amanda Duma, amanda.duma@gmail.com, CampusConnect2025!<br>4. Submit | Error: "Please use your CPUT email address (@mycput.ac.za)" | | |
 | TC-FR-004 | FR-01 - User Registration | Registration with existing email | 1. Open app<br>2. Click Register<br>3. Enter: Amanda Duma, 123456789@mycput.ac.za, CampusConnect2025!<br>4. Submit | Error: "Account already exists. Please login or reset password." | | |
 | TC-FR-005 | FR-01 - User Registration | Weak password validation | 1. Open app<br>2. Click Register<br>3. Enter: Amanda Duma, 123456789@mycput.ac.za, abc123<br>4. Submit | Error: "Password must contain at least 8 characters, 1 uppercase, 1 number, and 1 special character" | | |
 | TC-FR-006 | FR-02 - User Authentication | Student login with valid credentials | 1. Open app<br>2. Enter: 123456789@mycput.ac.za, CampusConnect2025!<br>3. Click Login | Login successful in <3 seconds; student dashboard loads with courses and balance | | |
@@ -59,17 +59,3 @@
 | Functional Tests | 25 | | | 25 |
 | Non-Functional Tests | 13 | | | 13 |
 | **Total** | **38** | | | **38** |
-
----
-
-## Test Environment
-
-| Component | Specification |
-|-----------|---------------|
-| **Browsers** | Chrome 120+, Firefox 120+, Safari 17+ |
-| **Mobile** | iOS 16+, Android 13+ |
-| **Network** | 4G, 5G, WiFi, Ethernet |
-| **Load Testing Tool** | k6, JMeter |
-| **Security Testing** | OWASP ZAP, SSL Labs |
-| **Performance** | Lighthouse, GTmetrix |
-| **Accessibility** | WAVE, axe DevTools |
