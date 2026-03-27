@@ -72,7 +72,9 @@ graph TD
     
     UC8 -.->|<<includes>>| UC9
     UC11 -.->|<<includes>>| UC12
+```
 
+---
 
 ## Written Explanation
 
@@ -147,4 +149,3 @@ graph TD
 | View Meal Plan | FR-17 (Meal Plan Balance Tracking) |
 | Report Lost Item | FR-15 (Lost Item Reporting) |
 | Send Emergency Alert | NFR-09 (Security - Emergency Communication) |
-
