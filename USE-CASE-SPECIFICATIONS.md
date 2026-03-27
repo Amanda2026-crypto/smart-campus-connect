@@ -1,4 +1,3 @@
-```markdown
 # Use Case Specifications: Smart Campus Connect
 
 ## Overview
@@ -31,6 +30,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 7. System calculates and displays cumulative GPA
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | No grades available | System displays "No grades posted yet" message |
@@ -63,6 +63,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. System sends confirmation email and in-app notification
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Late submission | System marks as "Late" and notifies faculty |
@@ -98,6 +99,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 9. System saves records and updates attendance percentages
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Student not in list | Faculty can manually add student |
@@ -135,6 +137,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. System saves assignment and sends notifications to enrolled students
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Missing required fields | System highlights missing fields and prevents publish |
@@ -171,6 +174,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. User can cancel or modify booking
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | No rooms available | System displays "No rooms match criteria" and suggests alternatives |
@@ -206,6 +210,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. System adds event to student's calendar
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Event at capacity | System displays "Event is full" and waitlist option |
@@ -242,6 +247,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. Student can invite classmates
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Group name exists | System prompts for unique name |
@@ -284,6 +290,7 @@ This document provides detailed specifications for 8 critical use cases identifi
 10. Approved events appear in public listings
 
 ### Alternative Flows
+
 | Flow | Condition | Action |
 |------|-----------|--------|
 | A-01 | Reject with reason | System includes reason in notification |
