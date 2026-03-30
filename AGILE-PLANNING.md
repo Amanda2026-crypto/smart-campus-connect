@@ -12,7 +12,7 @@ This document translates the requirements from Assignment 4 and use cases from A
 
 ---
 
-## Part 1: User Stories (30 Marks)
+## Part 1: User Stories 
 
 ### User Stories Table
 
@@ -88,7 +88,7 @@ This document translates the requirements from Assignment 4 and use cases from A
 
 ---
 
-## Part 2: Product Backlog (30 Marks)
+## Part 2: Product Backlog 
 
 ### Prioritized Product Backlog
 
@@ -135,7 +135,7 @@ This document translates the requirements from Assignment 4 and use cases from A
 
 ---
 
-## Part 3: Sprint Plan (30 Marks)
+## Part 3: Sprint Plan 
 
 ### Sprint 1 Goal
 
