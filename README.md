@@ -74,6 +74,9 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Test Cases](TEST-CASES.md)
 - [Reflection - Assignment 5](REFLECTION-ASSIGNMENT5.md)
 
+  ### Assignment 6
+- [Agile Planning Document](AGILE-PLANNING.md)
+
 ---
 
 ## Repository Structure
