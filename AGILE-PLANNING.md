@@ -6,83 +6,66 @@
 
 ---
 
-## Part 1: User Stories
+## Part 1: Product Backlog (Prioritized with MoSCoW)
 
-### User Stories Table
+### MoSCoW Prioritization Legend
 
-| Story ID | User Story (As a... I want... so that...) | INVEST Check | Story Points | Source (FR/UC) |
-|----------|-------------------------------------------|--------------|--------------|----------------|
-| US-001 | As a **student**, I want to **register using my CPUT email address** so that **I can create an account and access the system** | Independent, Valuable, Testable | 3 | FR-01 |
-| US-002 | As a **student**, I want to **log in with my email and password** so that **I can securely access my dashboard** | Independent, Valuable, Estimable, Testable | 2 | FR-02 |
-| US-003 | As a **faculty member**, I want to **log in with my staff email and password** so that **I can access my course management dashboard** | Independent, Valuable, Testable | 2 | FR-02 |
-| US-004 | As a **student**, I want to **view my enrolled courses** so that **I can see my class schedule and academic progress** | Valuable, Small, Testable | 3 | FR-04, UC-01 |
-| US-005 | As a **student**, I want to **view my grades for each course** so that **I can track my academic performance** | Valuable, Estimable, Testable | 3 | FR-05, UC-01 |
-| US-006 | As a **student**, I want to **submit assignments online** so that **I don't have to print and hand in physical papers** | Independent, Valuable, Testable | 5 | FR-06, UC-02 |
-| US-007 | As a **faculty member**, I want to **create and publish assignments** so that **students can submit their work digitally** | Independent, Valuable, Testable | 5 | FR-06, UC-04 |
-| US-008 | As a **faculty member**, I want to **take attendance using QR codes** so that **I can save time and avoid manual errors** | Valuable, Estimable, Testable | 5 | FR-07, UC-03 |
-| US-009 | As a **student**, I want to **find available study rooms on campus** so that **I don't waste time walking to full rooms** | Independent, Valuable, Testable | 5 | FR-09, UC-05 |
-| US-010 | As a **student**, I want to **book a study room for a specific time slot** so that **I can guarantee a space to study** | Valuable, Small, Testable | 3 | FR-09, UC-05 |
-| US-011 | As a **student**, I want to **track campus shuttles in real-time** so that **I can plan my commute and avoid waiting** | Independent, Valuable, Testable | 5 | FR-10 |
-| US-012 | As a **student**, I want to **browse and register for campus events** so that **I don't miss activities I'm interested in** | Independent, Valuable, Testable | 3 | FR-11, UC-06 |
-| US-013 | As a **student**, I want to **create study groups for my courses** so that **I can collaborate with classmates** | Independent, Valuable, Testable | 5 | FR-13, UC-07 |
-| US-014 | As a **student**, I want to **send messages in my study groups** so that **I can discuss coursework and share resources** | Valuable, Small, Testable | 3 | FR-14 |
-| US-015 | As a **faculty member**, I want to **create events for my course** so that **I can notify students about guest lectures or deadlines** | Independent, Valuable, Testable | 3 | FR-11 |
-| US-016 | As an **administrator**, I want to **approve or reject event submissions** so that **only appropriate events are published** | Independent, Valuable, Testable | 3 | FR-12, UC-08 |
-| US-017 | As a **student**, I want to **view my meal plan balance** so that **I know how many swipes I have left** | Independent, Valuable, Testable | 2 | FR-17 |
-| US-018 | As a **student**, I want to **report a lost item** so that **I can increase my chances of getting it back** | Independent, Small, Testable | 2 | FR-15 |
-| US-019 | As a **system admin**, I want to **send emergency alerts to all users** so that **students and staff receive critical safety information** | Independent, Valuable, Testable | 3 | FR-12, NFR-09 |
+| Priority | Meaning |
+|----------|---------|
+| **Must-have** | Essential for MVP; system cannot function without these |
+| **Should-have** | Important but not critical; can be delivered after MVP |
+| **Could-have** | Nice to have; adds value but not essential |
+| **Won't-have** | Not for this release; future consideration |
 
 ---
 
-### INVEST Criteria Validation
+### Product Backlog Table
 
-| Story ID | Independent | Negotiable | Valuable | Estimable | Small | Testable | Status |
-|----------|-------------|------------|----------|-----------|-------|----------|--------|
-| US-001 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-002 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-003 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-004 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-005 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-006 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-007 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-008 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-009 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-010 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-011 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-012 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-013 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-014 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-015 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-016 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-017 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-018 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
-| US-019 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Pass |
+| Story ID | User Story | MoSCoW Priority | Story Points | Dependencies | Justification |
+|----------|------------|-----------------|--------------|--------------|---------------|
+| US-001 | As a **student**, I want to **register using my CPUT email address** so that **I can create an account and access the system**. | Must-have | 3 | None | Without registration, users cannot access the system. This is the foundation. |
+| US-002 | As a **student**, I want to **log in with my email and password** so that **I can securely access my student dashboard**. | Must-have | 2 | US-001 | Users need to authenticate after registration. High business value. |
+| US-003 | As a **faculty member**, I want to **log in with my staff email and password** so that **I can access my course management dashboard**. | Must-have | 2 | US-001 | Faculty need access to manage courses. Equal priority to student login. |
+| US-004 | As a **student**, I want to **view my enrolled courses** so that **I can see my class schedule and academic progress**. | Must-have | 3 | US-002 | Core academic feature. Students need to see their courses first. |
+| US-005 | As a **student**, I want to **view my grades for each course** so that **I can track my academic performance**. | Must-have | 3 | US-004 | Students track performance. High demand feature. |
+| US-009 | As a **student**, I want to **find available study rooms on campus** so that **I don't waste time walking to rooms that are already full**. | Must-have | 5 | None | High student pain point. Directly addresses stakeholder concern. |
+| US-010 | As a **student**, I want to **book a study room for a specific time slot** so that **I can guarantee a space to study**. | Must-have | 3 | US-009 | Natural follow-up to finding rooms. Completes the feature. |
+| US-012 | As a **student**, I want to **browse and register for campus events** so that **I don't miss activities I'm interested in**. | Should-have | 3 | US-002 | Students miss events due to poor discovery. High value but not MVP. |
+| US-006 | As a **student**, I want to **submit assignments online** so that **I don't have to print and hand in physical papers**. | Should-have | 5 | US-004 | Eliminates paper submissions. Faculty and student benefit. |
+| US-007 | As a **faculty member**, I want to **create and publish assignments** so that **students can submit their work digitally**. | Should-have | 5 | US-004 | Faculty need to create assignments before students can submit. |
+| US-008 | As a **faculty member**, I want to **take attendance using QR codes** so that **I can save time and avoid manual errors**. | Should-have | 5 | US-003 | Faculty pain point. Manual attendance takes class time. |
+| US-011 | As a **student**, I want to **track campus shuttles in real-time** so that **I can plan my commute and avoid waiting**. | Should-have | 5 | None | Students waste time waiting for shuttles. High frustration. |
+| US-013 | As a **student**, I want to **create study groups for my courses** so that **I can collaborate with classmates**. | Could-have | 5 | US-004 | Social feature. Helps students collaborate. |
+| US-014 | As a **student**, I want to **send messages in my study groups** so that **I can discuss coursework and share resources**. | Could-have | 3 | US-013 | Enables group communication. Follows group creation. |
+| US-015 | As a **faculty member**, I want to **create events for my course** so that **I can notify students about guest lectures or deadlines**. | Could-have | 3 | US-003 | Faculty need to create events. |
+| US-016 | As an **administrator**, I want to **approve or reject event submissions** so that **only appropriate events are published**. | Could-have | 3 | US-015 | Admin oversight needed for event quality. |
+| US-017 | As a **student**, I want to **view my meal plan balance** so that **I know how many swipes I have left**. | Could-have | 2 | US-002 | Useful for students with meal plans. |
+| US-018 | As a **student**, I want to **report a lost item** so that **I can increase my chances of getting it back**. | Won't-have | 2 | None | Nice to have. Not critical for MVP or next release. |
+| US-019 | As a **system admin**, I want to **send emergency alerts to all users** so that **students and staff receive critical safety information**. | Won't-have | 3 | None | Important but can be added after core features work. |
 
 ---
 
-### Traceability to Assignments 4 and 5
+### Product Backlog Summary
 
-| User Story | Functional Requirement (Assignment 4) | Use Case (Assignment 5) |
-|------------|---------------------------------------|------------------------|
-| US-001 | FR-01 (User Registration) | - |
-| US-002 | FR-02 (User Authentication) | - |
-| US-003 | FR-02 (User Authentication) | - |
-| US-004 | FR-04 (Course Enrollment) | UC-01 (View Grades) |
-| US-005 | FR-05 (Grade Viewing) | UC-01 (View Grades) |
-| US-006 | FR-06 (Assignment Management) | UC-02 (Submit Assignment) |
-| US-007 | FR-06 (Assignment Management) | UC-04 (Create Assignment) |
-| US-008 | FR-07 (Attendance Tracking) | UC-03 (Take Attendance) |
-| US-009 | FR-09 (Study Space Finder) | UC-05 (Find Study Space) |
-| US-010 | FR-09 (Study Space Finder) | UC-05 (Find Study Space) |
-| US-011 | FR-10 (Shuttle Tracking) | - |
-| US-012 | FR-11 (Event Creation and Discovery) | UC-06 (Register for Event) |
-| US-013 | FR-13 (Study Group Creation) | UC-07 (Create Study Group) |
-| US-014 | FR-14 (In-App Messaging) | - |
-| US-015 | FR-11 (Event Creation and Discovery) | - |
-| US-016 | FR-12 (Event Approval Workflow) | UC-08 (Approve Event) |
-| US-017 | FR-17 (Meal Plan Balance Tracking) | - |
-| US-018 | FR-15 (Lost Item Reporting) | - |
-| US-019 | NFR-09 (Security) | - |
+| MoSCoW Category | Number of Stories | Total Story Points |
+|-----------------|-------------------|-------------------|
+| Must-have | 7 | 21 |
+| Should-have | 5 | 23 |
+| Could-have | 5 | 16 |
+| Won't-have | 2 | 5 |
+| **Total** | **19** | **65** |
+
+---
+
+### Traceability to Stakeholder Concerns
+
+| Stakeholder | Must-have Story | Justification |
+|-------------|-----------------|---------------|
+| Student | US-009 (Find Study Rooms) | Directly addresses pain point: wasted time finding spaces |
+| Student | US-005 (View Grades) | Directly addresses need: tracking academic performance |
+| Faculty | US-003 (Faculty Login) | Directly addresses need: access to course management |
+| Faculty | US-007 (Create Assignment) | Directly addresses need: easy assignment posting |
+| Admin | US-016 (Approve Event) | Directly addresses need: efficient event approval workflow |
 
 ---
 
@@ -90,23 +73,25 @@
 
 ### Sprint 1 Goal
 
-**"Deliver a functional MVP that allows students to register, log in, view courses and grades, and find study rooms."**
+**"Deliver a functional MVP that allows students to register, log in, view courses and grades, and find and book study rooms."**
 
 ### Sprint Duration: 2 weeks
 
-### Selected Stories for Sprint 1
+### Selected Stories for Sprint 1 (Must-have)
 
-| Story ID | User Story | Story Points | Acceptance Criteria |
-|----------|------------|--------------|---------------------|
-| US-001 | Student registration with CPUT email | 3 | User can register with valid CPUT email; verification email sent |
-| US-002 | Student login with email and password | 2 | User can log in; JWT token generated; dashboard loads |
-| US-003 | Faculty login with staff email | 2 | Faculty can log in; faculty dashboard loads |
-| US-004 | View enrolled courses | 3 | Student dashboard shows list of enrolled courses |
-| US-005 | View grades for each course | 3 | Grades displayed with assignment breakdown |
-| US-009 | Find available study rooms | 5 | Map shows available rooms; filters work |
-| US-010 | Book a study room | 3 | User can select time slot and confirm booking |
+| Story ID | User Story | MoSCoW Priority | Story Points | Acceptance Criteria |
+|----------|------------|-----------------|--------------|---------------------|
+| US-001 | Student registration with CPUT email | Must-have | 3 | User can register with valid CPUT email; verification email sent |
+| US-002 | Student login with email and password | Must-have | 2 | User can log in; JWT token generated; dashboard loads |
+| US-003 | Faculty login with staff email | Must-have | 2 | Faculty can log in; faculty dashboard loads |
+| US-004 | View enrolled courses | Must-have | 3 | Student dashboard shows list of enrolled courses |
+| US-005 | View grades for each course | Must-have | 3 | Grades displayed with assignment breakdown |
+| US-009 | Find available study rooms | Must-have | 5 | Map shows available rooms; filters work |
+| US-010 | Book a study room | Must-have | 3 | User can select time slot and confirm booking |
 
 ### Sprint 1 Total Story Points: 21
+
+---
 
 ### Sprint Tasks Breakdown
 
@@ -160,20 +145,30 @@
 
 ---
 
-## Summary of Deliverables
+## Summary of Artifacts
 
-| Deliverable | Location |
-|-------------|----------|
-| User Stories Table | This document (Part 1) |
+| Artifact | Location |
+|----------|----------|
+| Product Backlog | This document (Part 1) |
 | Sprint Plan | This document (Part 2) |
-| Product Backlog | [PRODUCT-BACKLOG.md](PRODUCT-BACKLOG.md) |
+| User Stories Table | GitHub Issues + Project Board |
 | Reflection | [REFLECTION-ASSIGNMENT6.md](REFLECTION-ASSIGNMENT6.md) |
-| GitHub Issues | https://github.com/Amanda2026-crypto/smart-campus-connect/issues |
 | GitHub Milestones | https://github.com/Amanda2026-crypto/smart-campus-connect/milestones |
 | GitHub Project Board | https://github.com/Amanda2026-crypto/smart-campus-connect/projects |
 
 ---
 
+## Traceability to Prior Assignments
+
+| Assignment | Artifact | Location in This Document |
+|------------|----------|---------------------------|
+| Assignment 4 | Functional Requirements | Product Backlog justification column |
+| Assignment 4 | Stakeholder Concerns | Traceability to stakeholder concerns table |
+| Assignment 5 | Use Cases | Selected Sprint 1 stories map to UC-01, UC-05 |
+| Assignment 5 | Use Case Specifications | Acceptance criteria align with use case flows |
+
+---
+
 ## Conclusion
 
-This Agile planning document translates 19 user stories from Assignments 4 and 5 into a prioritized backlog and a focused 2-week sprint. The MVP (Sprint 1) delivers registration, login, course viewing, grade viewing, and study room booking. This gives students immediate value while keeping the scope manageable for a single developer.
+This Agile Planning Document compiles the Product Backlog (Part 1) and Sprint Plan (Part 2) into one file. The MVP (Sprint 1) delivers 7 must-have stories totaling 21 story points. This gives students immediate value while keeping the scope manageable for a single developer. The remaining stories are prioritized using MoSCoW for future sprints.
