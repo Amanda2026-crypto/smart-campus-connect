@@ -48,15 +48,6 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 
 ---
 
-## Database Entities (21+)
-
-- Users, Courses, Enrollments, Assignments, Submissions, Attendance
-- Events, Event Registrations, Buildings, Rooms, Room Bookings
-- Shuttle Routes, Shuttle Locations, Study Groups, Messages
-- Lost Items, Found Items, Meal Plans, Transactions, Notifications
-
----
-
 ## Documentation
 
 ### Assignment 3
@@ -78,4 +69,30 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Agile Planning Document](AGILE-PLANNING.md)
 - [Reflection - Assignment 6](REFLECTION-ASSIGNMENT6.md)
 
-## Repository Structure
+### Assignment 7
+- [Template Analysis](template-analysis.md)
+- [Kanban Explanation](kanban-explanation.md)
+- [Reflection - Assignment 7](REFLECTION-ASSIGNMENT7.md)
+- [Screenshots](template-comparison.png)
+- [Kanban Board - Default](kanban-board-default.jpeg)
+- [Kanban Board - Custom Columns](kanban-board-custom-columns.jpeg)
+- [Kanban Board - Final](kanban-board-final.jpeg)
+
+### Kanban Board Customization
+I added two custom columns to the Kanban template:
+- **Testing**: Stories need verification before marking Done
+- **Blocked**: Stories with dependencies (US-010 depends on US-009)
+
+---
+
+## Author
+
+**Amanda**
+- Course: Software Engineering
+- Institution: CPUT (Cape Peninsula University of Technology)
+
+---
+
+## License
+
+This project is created for educational purposes as part of Software Engineering coursework.
