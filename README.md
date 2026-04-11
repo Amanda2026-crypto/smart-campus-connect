@@ -92,7 +92,7 @@ I added two custom columns to the Kanban template:
 - Institution: CPUT (Cape Peninsula University of Technology)
 
 ##Github Tools
-https://github.com/users/Amanda2026-crypto/projects/4
+- [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
 ---
 
 ## License
