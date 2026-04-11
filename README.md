@@ -78,6 +78,9 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Kanban Board - Custom Columns](kanban-board-custom-columns.jpeg)
 - [Kanban Board - Final](kanban-board-final.jpeg)
 
+##Github Tools
+- [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
+
 ### Kanban Board Customization
 I added two custom columns to the Kanban template:
 - **Testing**: Stories need verification before marking Done
@@ -91,8 +94,6 @@ I added two custom columns to the Kanban template:
 - Course: Software Engineering
 - Institution: CPUT (Cape Peninsula University of Technology)
 
-##Github Tools
-- [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
 ---
 
 ## License
