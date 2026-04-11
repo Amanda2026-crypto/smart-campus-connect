@@ -78,7 +78,7 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Kanban Board - Custom Columns](kanban-board-custom-columns.jpeg)
 - [Kanban Board - Final](kanban-board-final.jpeg)
 
-##Github Tools
+### Github Tools:
 - [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
 
 ### Kanban Board Customization
