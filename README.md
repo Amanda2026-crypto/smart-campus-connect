@@ -80,7 +80,7 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Kanban Board - Final](kanban-board-final.jpeg)
 
 ### Github Tools:
-- [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
+- [Kanban Board]-https://github.com/users/Amanda2026-crypto/projects/4
 
 ### Kanban Board Customization
 I added two custom columns to the Kanban template:
