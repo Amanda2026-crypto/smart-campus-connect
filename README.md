@@ -70,10 +70,11 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 - [Reflection - Assignment 6](REFLECTION-ASSIGNMENT6.md)
 
 ### Assignment 7
-- [Template Analysis](template-analysis.md)
-- [Kanban Explanation](kanban-explanation.md)
+- [Template Analysis](template_analysis.md)
+- [Kanban Explanation](kanban_explanation.md)
 - [Reflection - Assignment 7](REFLECTION-ASSIGNMENT7.md)
-- [Screenshots](template-comparison.png)
+- [Kanban Board](https://github.com/Amanda2026-crypto/smart-campus-connect/projects/4)
+- [Template Comparison Screenshot](template-comparison.png)
 - [Kanban Board - Default](kanban-board-default.jpeg)
 - [Kanban Board - Custom Columns](kanban-board-custom-columns.jpeg)
 - [Kanban Board - Final](kanban-board-final.jpeg)
