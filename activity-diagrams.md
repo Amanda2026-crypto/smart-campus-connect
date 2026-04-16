@@ -2,7 +2,7 @@
 **Click "Commit new file"**
 
 ---
-```markdown
+
 # Activity Diagrams: Smart Campus Connect
 
 ---
