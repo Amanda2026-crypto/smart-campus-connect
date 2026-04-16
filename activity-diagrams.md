@@ -34,7 +34,7 @@ If valid, account created and verification email sent
 
 FR-01, US-001
 
-Workflow 2: Assignment Submission
+## Workflow 2: Assignment Submission
 
 ```mermaid
 flowchart TD
@@ -71,7 +71,7 @@ Faculty notified, student confirmed
 
 FR-06, UC-02, US-006
 
-Workflow 3: Study Room Booking
+## Workflow 3: Study Room Booking
 
 ```mermaid
 flowchart TD
@@ -106,7 +106,7 @@ If available, confirms booking and sends notification
 
 FR-09, UC-05, US-009, US-010
 
-Workflow 4: Event Registration
+## Workflow 4: Event Registration
 
 ```mermaid
 flowchart TD
@@ -138,7 +138,7 @@ Parallel: Send email + Add to calendar
 
 FR-11, UC-06, US-012
 
-Workflow 5: Attendance via QR Code
+## Workflow 5: Attendance via QR Code
 
 ```mermaid
 flowchart TD
@@ -168,7 +168,7 @@ If valid, attendance recorded with timestamp
 
 FR-07, UC-03, US-008
 
-Workflow 6: Event Approval (Admin)
+## Workflow 6: Event Approval (Admin)
 
 ```mermaid
 flowchart TD
@@ -196,7 +196,7 @@ If approved, event published and students notified
 
 FR-12, UC-08, US-016
 
-Workflow 7: Lost Item Claim
+## Workflow 7: Lost Item Claim
 
 ```mermaid
 flowchart TD
@@ -228,7 +228,7 @@ Item marked as claimed
 
 FR-15, FR-16, US-018
 
-Workflow 8: Emergency Alert
+## Workflow 8: Emergency Alert
 
 ```mermaid
 flowchart TD
