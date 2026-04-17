@@ -10,7 +10,7 @@
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Registered
     Registered --> Verified : click verification link
@@ -19,7 +19,7 @@ stateDiagram-v2
     Active --> Deactivated : user deactivates
     Suspended --> Active : admin reinstates
     Deactivated --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -63,7 +63,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Draft
     Draft --> Submitted : student submits
@@ -72,7 +72,7 @@ stateDiagram-v2
     Late --> Graded : faculty accepts late
     Graded --> Returned : faculty adds feedback
     Returned --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -107,7 +107,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Available
     Available --> Pending : student requests
@@ -118,7 +118,7 @@ stateDiagram-v2
     InProgress --> Completed : end time reached
     Completed --> Available : room released
     Canceled --> Available : room released
-[/mermaid]
+```
 
 ### Key States
 
@@ -156,7 +156,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Draft
     Draft --> Submitted : organizer submits
@@ -166,7 +166,7 @@ stateDiagram-v2
     Approved --> Published : start time reached
     Published --> Completed : event ends
     Completed --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -204,7 +204,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Initiated
     Initiated --> Authorized : check balance
@@ -214,7 +214,7 @@ stateDiagram-v2
     Completed --> [*]
     Declined --> [*]
     Canceled --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -248,7 +248,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Reported
     Reported --> Investigating : admin reviews
@@ -257,7 +257,7 @@ stateDiagram-v2
     Found --> Claimed : owner claims
     Claimed --> [*]
     Closed --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -291,7 +291,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Forming
     Forming --> Active : members join
@@ -299,7 +299,7 @@ stateDiagram-v2
     Active --> Disbanded : admin removes
     Archived --> [*]
     Disbanded --> [*]
-[/mermaid]
+```
 
 ### Key States
 
@@ -332,7 +332,7 @@ stateDiagram-v2
 
 ### Diagram
 
-[mermaid]
+```mermaid
 stateDiagram-v2
     [*] --> Scheduled
     Scheduled --> Approaching : gps update
@@ -341,7 +341,7 @@ stateDiagram-v2
     Departing --> Scheduled : en route
     Scheduled --> Offline : gps lost
     Offline --> Scheduled : gps restored
-[/mermaid]
+```
 
 ### Key States
 
