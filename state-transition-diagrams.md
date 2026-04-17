@@ -1,9 +1,5 @@
 # State Transition Diagrams: Smart Campus Connect
 
-**Assignment 8**
-**Amanda**
-**April 17, 2026**
-
 ---
 
 ## Object 1: User Account
