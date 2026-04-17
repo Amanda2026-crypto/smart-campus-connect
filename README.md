@@ -97,11 +97,4 @@ I added two custom columns to the Kanban template:
 ## Author
 
 **Amanda**
-- Course: Software Engineering
-- Institution: CPUT (Cape Peninsula University of Technology)
 
----
-
-## License
-
-This project is created for educational purposes as part of Software Engineering coursework.
