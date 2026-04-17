@@ -1,240 +1,375 @@
-
-**Click "Commit new file"**
-
----
-
 # Activity Diagrams: Smart Campus Connect
 
 ---
 
 ## Workflow 1: User Registration
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[User opens app] --> B[User enters details]
-    B --> C[System validates email]
-    C --> D{Email valid?}
-    D -->|No| E[Show error message]
-    E --> B
-    D -->|Yes| F[Create account]
-    F --> G[Send verification email]
-    G --> H[Complete]
+    A[User opens app] --> B[User clicks Register]
+    B --> C[User enters details]
+    C --> D[System validates email]
+    D --> E{Valid @mycput.ac.za?}
+    E -->|No| F[Show error]
+    F --> C
+    E -->|Yes| G[Check if email exists]
+    G --> H{Already registered?}
+    H -->|Yes| I[Show account exists]
+    I --> C
+    H -->|No| J[Create account]
+    J --> K[Send verification email]
+    K --> L[User clicks link]
+    L --> M[Account verified]
+    M --> N[Complete]
 ```
-Swimlanes: User, System
 
-Steps:
+### Explanation
 
-User opens app and enters registration details
+| Element | Description |
+|---------|-------------|
+| Start Node | User opens mobile app |
+| End Node | Account verified |
+| Actions | Enter details, validate email, check existence, create account, send email, verify link |
+| Decisions | Valid email domain? Email already registered? |
+| Parallel Actions | None |
+| Swimlanes | User: opens, registers, enters, verifies; System: validates, checks, creates, sends |
 
-System validates email format (@mycput.ac.za)
+### Stakeholder Concerns Addressed
 
-If invalid, error shown and user re-enters
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Student | Easy registration | Simple form with clear errors |
+| IT Staff | Security | Email domain validation |
 
-If valid, account created and verification email sent
+### Traceability
 
-FR-01, US-001
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-01 |
+| Assignment 5 | UC-001 |
+| Assignment 6 | US-001 |
+
+---
 
 ## Workflow 2: Assignment Submission
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Student selects assignment] --> B[Student uploads file]
-    B --> C[System validates file]
-    C --> D{File valid?}
-    D -->|No| E[Show error]
-    E --> B
-    D -->|Yes| F[Save submission with timestamp]
-    F --> G{Due date passed?}
-    G -->|Yes| H[Mark as Late]
-    G -->|No| I[Mark as On Time]
-    H --> J[Notify faculty]
-    I --> J
-    J --> K[Show confirmation to student]
-    K --> L[Complete]
-
+    A[Student logs in] --> B[Select assignment]
+    B --> C[Upload file]
+    C --> D[Validate file type]
+    D --> E{Type allowed?}
+    E -->|No| F[Show error]
+    F --> C
+    E -->|Yes| G[Validate file size]
+    G --> H{Size ≤ 50MB?}
+    H -->|No| I[Show too large]
+    I --> C
+    H -->|Yes| J[Click Submit]
+    J --> K[Save with timestamp]
+    K --> L{After due date?}
+    L -->|Yes| M[Mark Late]
+    L -->|No| N[Mark On Time]
+    M --> O[Notify faculty]
+    N --> O
+    O --> P[Show confirmation]
+    P --> Q[Complete]
 ```
-Swimlanes: Student, System
 
-Steps:
+### Explanation
 
-Student selects assignment and uploads file
+| Element | Description |
+|---------|-------------|
+| Start Node | Student logs in |
+| End Node | Submission confirmed |
+| Actions | Select, upload, validate, submit, save, check due date, notify |
+| Decisions | Type allowed? Size OK? After due date? |
+| Parallel Actions | None |
+| Swimlanes | Student: logs in, selects, uploads, submits; System: validates, saves, checks, notifies |
 
-System validates file type and size
+### Stakeholder Concerns Addressed
 
-If invalid, error shown
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Student | No printing | Digital upload |
+| Faculty | Late detection | Automatic late marking |
 
-If valid, submission saved with timestamp
+### Traceability
 
-System checks due date and marks as On Time or Late
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-06 |
+| Assignment 5 | UC-002 |
+| Assignment 6 | US-006 |
 
-Faculty notified, student confirmed
-
-FR-06, UC-02, US-006
+---
 
 ## Workflow 3: Study Room Booking
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Student opens study spaces] --> B[Student applies filters]
-    B --> C[System shows available rooms]
-    C --> D[Student selects room and time]
-    D --> E[System checks availability]
-    E --> F{Room available?}
-    F -->|No| G[Show alternatives]
-    G --> D
-    F -->|Yes| H[Confirm booking]
-    H --> I[Send notification]
-    I --> J[Add to calendar]
-    J --> K[Complete]
-
+    A[Student opens Study Spaces] --> B[Select building]
+    B --> C[Select date and time]
+    C --> D[Apply filters]
+    D --> E[View available rooms]
+    E --> F[Select room]
+    F --> G[System checks availability]
+    G --> H{Room available?}
+    H -->|No| I[Show alternatives]
+    I --> C
+    H -->|Yes| J[Confirm booking]
+    J --> K[Create booking record]
+    K --> L[Send confirmation email]
+    L --> M[Add to calendar]
+    M --> N[Complete]
 ```
-Swimlanes: Student, System
 
-Steps:
+### Explanation
 
-Student applies filters (building, time, capacity)
+| Element | Description |
+|---------|-------------|
+| Start Node | Student opens Study Spaces |
+| End Node | Booking confirmed |
+| Actions | Select, filter, view, select, confirm, create, send email, add to calendar |
+| Decisions | Room available? |
+| Parallel Actions | Send email AND add to calendar |
+| Swimlanes | Student: selects, filters, confirms; System: displays, checks, creates, sends, adds |
 
-System displays available rooms (color-coded)
+### Stakeholder Concerns Addressed
 
-Student selects room and time slot
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Student | Wasted time | Real-time availability |
+| Student | Guarantee space | Booking confirmation |
 
-System checks availability
+### Traceability
 
-If unavailable, shows alternatives
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-09 |
+| Assignment 5 | UC-005 |
+| Assignment 6 | US-009, US-010 |
 
-If available, confirms booking and sends notification
-
-FR-09, UC-05, US-009, US-010
+---
 
 ## Workflow 4: Event Registration
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Student browses events] --> B[Student selects event]
-    B --> C[System checks capacity]
-    C --> D{Spots available?}
-    D -->|No| E[Add to waitlist]
-    E --> F[Notify when spot opens]
-    F --> G[Complete]
-    D -->|Yes| H[Register student]
-    H --> I[Send confirmation email]
-    H --> J[Add to calendar]
-    I --> K[Complete]
-    J --> K
+    A[Student opens Events] --> B[Browse events]
+    B --> C[Select event]
+    C --> D[System checks capacity]
+    D --> E{Spots available?}
+    E -->|No| F[Show event full]
+    F --> G[Offer waitlist]
+    G --> H[Join waitlist?]
+    H -->|Yes| I[Add to waitlist]
+    I --> J[Notify when spot opens]
+    J --> K[Complete]
+    H -->|No| L[Return to browse]
+    E -->|Yes| M[Click Register]
+    M --> N[Add to attendees]
+    N --> O[Send confirmation]
+    N --> P[Add to calendar]
+    O --> Q[Complete]
+    P --> Q
 ```
-Swimlanes: Student, System
 
-Steps:
+### Explanation
 
-Student browses and selects event
+| Element | Description |
+|---------|-------------|
+| Start Node | Student opens Events |
+| End Node | Registered or waitlisted |
+| Actions | Browse, select, check capacity, register, add to attendees, send email, add to calendar |
+| Decisions | Spots available? Join waitlist? |
+| Parallel Actions | Send email AND add to calendar |
+| Swimlanes | Student: browses, selects, registers, decides; System: checks, adds, sends, adds |
 
-System checks capacity
+### Stakeholder Concerns Addressed
 
-If full, student added to waitlist
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Student | Never miss events | Calendar integration |
+| Student | Full events | Waitlist option |
 
-If available, student registered
+### Traceability
 
-Parallel: Send email + Add to calendar
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-11 |
+| Assignment 5 | UC-006 |
+| Assignment 6 | US-012 |
 
-FR-11, UC-06, US-012
+---
 
 ## Workflow 5: Attendance via QR Code
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Faculty selects course] --> B[Faculty generates QR code]
-    B --> C[Student scans QR code]
-    C --> D[System validates QR]
-    D --> E{QR valid?}
-    E -->|No| F[Show invalid message]
-    F --> C
-    E -->|Yes| G[Record attendance]
-    G --> H[Save timestamp]
-    H --> I[Complete]
+    A[Faculty logs in] --> B[Select course]
+    B --> C[Click Take Attendance]
+    C --> D[System generates QR]
+    D --> E[Display QR code]
+    E --> F[Student scans QR]
+    F --> G[System validates QR]
+    G --> H{QR valid?}
+    H -->|No| I[Show invalid]
+    I --> F
+    H -->|Yes| J{QR expired?}
+    J -->|Yes| K[Show expired]
+    K --> C
+    J -->|No| L[Record attendance]
+    L --> M[Save timestamp]
+    M --> N[Show confirmation]
+    N --> O[Complete]
 ```
-Swimlanes: Faculty, Student, System
 
-Steps:
+### Explanation
 
-Faculty generates QR code
+| Element | Description |
+|---------|-------------|
+| Start Node | Faculty logs in |
+| End Node | Attendance recorded |
+| Actions | Select course, generate QR, display, scan, validate, record, save timestamp |
+| Decisions | QR valid? QR expired? |
+| Parallel Actions | None |
+| Swimlanes | Faculty: logs in, selects, generates, displays; Student: scans; System: generates, validates, records, saves |
 
-Student scans code using app
+### Stakeholder Concerns Addressed
 
-System validates QR code
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Faculty | Time wasted | QR automation |
+| Student | Privacy | Only ID recorded |
 
-If invalid, error shown and student rescans
+### Traceability
 
-If valid, attendance recorded with timestamp
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-07 |
+| Assignment 5 | UC-003 |
+| Assignment 6 | US-008 |
 
-FR-07, UC-03, US-008
+---
 
 ## Workflow 6: Event Approval (Admin)
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Organizer creates event] --> B[Organizer submits for approval]
-    B --> C[Admin reviews event]
-    C --> D{Approve?}
-    D -->|No| E[Reject with reason]
-    E --> F[Organizer revises]
-    F --> B
-    D -->|Yes| G[Publish event]
-    G --> H[Notify students]
-    H --> I[Complete]
+    A[Organizer creates event] --> B[Submits for approval]
+    B --> C[Admin opens queue]
+    C --> D[Reviews event details]
+    D --> E{Approve?}
+    E -->|No| F[Enter rejection reason]
+    F --> G[Notify organizer]
+    G --> H[Organizer edits]
+    H --> B
+    E -->|Yes| I[Approve event]
+    I --> J[Publish event]
+    J --> K[Notify students]
+    K --> L[Complete]
 ```
-Swimlanes: Organizer, Admin, System
 
-Steps:
+### Explanation
 
-Organizer creates and submits event
+| Element | Description |
+|---------|-------------|
+| Start Node | Organizer creates event |
+| End Node | Event published or returned |
+| Actions | Create, submit, review, approve/reject, publish, notify |
+| Decisions | Approve? |
+| Parallel Actions | None |
+| Swimlanes | Organizer: creates, submits, edits; Admin: reviews, approves/rejects; System: notifies |
 
-Admin reviews for policy compliance
+### Stakeholder Concerns Addressed
 
-If rejected, reason sent to organizer for revision
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Admin | Quality control | Approval step |
+| Organizer | Clear feedback | Rejection reason |
 
-If approved, event published and students notified
+### Traceability
 
-FR-12, UC-08, US-016
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-12 |
+| Assignment 5 | UC-008 |
+| Assignment 6 | US-016 |
+
+---
 
 ## Workflow 7: Lost Item Claim
+
+### Diagram
 
 ```mermaid
 flowchart TD
     A[Student reports lost item] --> B[System stores report]
     B --> C[Admin reviews]
-    C --> D{Match found?}
-    D -->|No| E[Monitor for 30 days]
-    E --> C
-    D -->|Yes| F[Notify student]
-    F --> G[Student confirms ownership]
-    G --> H[Arrange return]
-    H --> I[Mark as claimed]
+    C --> D[Search for matches]
+    D --> E{Match found?}
+    E -->|No| F[Monitor for 30 days]
+    F --> G{30 days passed?}
+    G -->|No| D
+    G -->|Yes| H[Close report]
+    H --> I[Notify student]
     I --> J[Complete]
-
+    E -->|Yes| K[Notify student of match]
+    K --> L[Student confirms]
+    L --> M[Arrange return]
+    M --> N[Mark as claimed]
+    N --> O[Complete]
 ```
-Swimlanes: Student, System, Admin
 
-Steps:
+### Explanation
 
-Student reports lost item with photo and location
+| Element | Description |
+|---------|-------------|
+| Start Node | Student reports lost item |
+| End Node | Claimed or closed |
+| Actions | Report, store, review, search, match, notify, confirm, return, claim |
+| Decisions | Match found? 30 days passed? |
+| Parallel Actions | None |
+| Swimlanes | Student: reports, confirms; Admin: reviews, searches; System: stores, notifies, tracks |
 
-Admin reviews and searches for matches
+### Stakeholder Concerns Addressed
 
-If match found, student notified
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Student | Recover items | Match notification |
+| Student | Closure | 30-day expiration |
 
-Student confirms ownership and arranges pickup
+### Traceability
 
-Item marked as claimed
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | FR-15, FR-16 |
+| Assignment 6 | US-018 |
 
-FR-15, FR-16, US-018
+---
 
 ## Workflow 8: Emergency Alert
 
+### Diagram
+
 ```mermaid
 flowchart TD
-    A[Admin composes alert] --> B[Admin selects audience]
+    A[Admin composes alert] --> B[Select audience]
     B --> C[System validates content]
-    C --> D{Content valid?}
+    C --> D{Content appropriate?}
     D -->|No| E[Return for revision]
     E --> A
     D -->|Yes| F[Send push notification]
@@ -245,31 +380,28 @@ flowchart TD
     H --> I
     I --> J[Complete]
 ```
-Swimlanes: Admin, System
 
-Steps:
+### Explanation
 
-Admin composes emergency alert
+| Element | Description |
+|---------|-------------|
+| Start Node | Admin composes alert |
+| End Node | Alert sent and logged |
+| Actions | Compose, select audience, validate, send notifications, log |
+| Decisions | Content appropriate? |
+| Parallel Actions | Push, email, SMS all send simultaneously |
+| Swimlanes | Admin: composes, selects; System: validates, sends, logs |
 
-System validates content
+### Stakeholder Concerns Addressed
 
-If invalid, returned for revision
+| Stakeholder | Concern | How Addressed |
+|-------------|---------|---------------|
+| Admin | Quick communication | Multiple channels |
+| Security | Reach all users | Audience selection |
 
-If valid, parallel notifications sent (push, email, SMS)
+### Traceability
 
-Event logged for audit
-
-US-019, NFR-09
-
-Summary: Workflows and Traceability
-Workflow	FR	UC	User Story
-User Registration	FR-01	-	US-001
-Assignment Submission	FR-06	UC-02	US-006
-Study Room Booking	FR-09	UC-05	US-009, US-010
-Event Registration	FR-11	UC-06	US-012
-Attendance via QR	FR-07	UC-03	US-008
-Event Approval	FR-12	UC-08	US-016
-Lost Item Claim	FR-15, FR-16	-	US-018
-Emergency Alert	NFR-09	-	US-019
-
-
+| Assignment | Artifact |
+|------------|----------|
+| Assignment 4 | NFR-09 |
+| Assignment 6 | US-019 |
