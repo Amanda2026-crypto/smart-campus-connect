@@ -87,6 +87,11 @@ I added two custom columns to the Kanban template:
 - **Testing**: Stories need verification before marking Done
 - **Blocked**: Stories with dependencies (US-010 depends on US-009)
 
+### Assignment 8
+- [State Transition Diagrams](state-transition-diagrams.md)
+- [Activity Diagrams](activity-diagrams.md)
+- [Reflection - Assignment 8](reflection-assignment8.md)
+
 ---
 
 ## Author
