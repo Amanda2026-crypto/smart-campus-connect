@@ -93,6 +93,10 @@ I added two custom columns to the Kanban template:
 - [Reflection - Assignment 8](reflection-assignment8.md)
 
 ---
+### Assignment 9
+- [Domain Model](domain-model.md)
+- [Class Diagram](class-diagram.md)
+- [Reflection - Assignment 9](reflection-assignment9.md)
 
 ## Author
 
