@@ -340,7 +340,7 @@ classDiagram
 
     %% Notification Relationships
     User "1" --> "*" Notification : receives
-
+```
 # Key Design Decisions
 
 ## Decision 1: Abstract User Class with Inheritance
