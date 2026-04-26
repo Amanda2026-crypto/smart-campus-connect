@@ -1,9 +1,4 @@
 # Class Diagram: Smart Campus Connect
-
-**Assignment 9**
-**Amanda**
-**April 23, 2026**
-
 ---
 
 ## Diagram
