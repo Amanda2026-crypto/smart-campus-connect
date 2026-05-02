@@ -98,6 +98,26 @@ I added two custom columns to the Kanban template:
 - [Class Diagram](class-diagram.md)
 - [Reflection - Assignment 9](reflection-assignment9.md)
 
+## Assignment 10: Creational Design Patterns
+
+### Language Choice: Python
+All code is implemented in Python 3.13.
+
+### Six Creational Patterns Implemented
+
+| Pattern | File Location | Purpose |
+|---------|---------------|---------|
+| Simple Factory | `src/creational_patterns/simple_factory.py` | Creates User objects (Student, Faculty, Admin) |
+| Factory Method | `src/creational_patterns/factory_method.py` | Creates Payment Processors (Credit Card, PayPal) |
+| Abstract Factory | `src/creational_patterns/abstract_factory.py` | Creates UI components (Windows/MacOS) |
+| Builder | `src/creational_patterns/builder.py` | Builds complex Assignment objects |
+| Prototype | `src/creational_patterns/prototype.py` | Clones Notification templates |
+| Singleton | `src/creational_patterns/singleton.py` | Single DatabaseConnection instance |
+
+### Running Tests
+```bash
+python -m unittest discover tests
+
 ## Author
 
 **Amanda**
