@@ -100,6 +100,11 @@ I added two custom columns to the Kanban template:
 
 ## Assignment 10: Creational Design Patterns
 
+- [Source Code](src/)
+- [Unit Tests](tests/)
+- [CHANGELOG](CHANGELOG.md)
+- [GitHub Issues](https://github.com/Amanda2026-crypto/smart-campus-connect/issues)
+  
 ### Language Choice: Python
 All code is implemented in Python 3.13.
 
