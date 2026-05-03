@@ -118,6 +118,12 @@ All code is implemented in Python 3.13.
 ```bash
 python -m unittest discover tests
 ```
+
+### Test Results
+```bash
+Ran 25 tests in 0.006s
+OK
+```
 ---
 ## Author
 
