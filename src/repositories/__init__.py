@@ -1,0 +1,7 @@
+# Repository package
+from src.repositories.repository_interface import Repository
+from src.repositories.user_repository import UserRepository, StudentRepository, FacultyRepository, AdminRepository
+from src.repositories.course_repository import CourseRepository
+from src.repositories.assignment_repository import AssignmentRepository, SubmissionRepository
+from src.repositories.booking_repository import StudyRoomRepository, BookingRepository
+from src.repositories.event_repository import EventRepository, EventRegistrationRepository
