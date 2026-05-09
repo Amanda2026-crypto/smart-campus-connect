@@ -151,6 +151,7 @@ OK
 ```python
 # Use in-memory storage (current)
 repo = RepositoryFactory.get_user_repository("MEMORY")
+```
 
 # Future: switch to database
 # repo = RepositoryFactory.get_user_repository("DATABASE")
