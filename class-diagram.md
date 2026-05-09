@@ -449,3 +449,117 @@ This shows the method takes a course ID and returns a success status.
 | Lost Item Report | `LostItem` (status: reported, investigating, found, claimed) |
 | Study Group | `StudyGroup` (status: forming, active, archived) |
 | Shuttle Location | `ShuttleLocation` (status: scheduled, approaching, atStop) |
+
+
+# Updated Class Diagram: Repository Pattern
+
+**Assignment 11**  
+**Amanda**  
+**May 4, 2026**
+
+## Diagram
+
+```mermaid
+classDiagram
+
+    class Repository~T, ID~ {
+        <<interface>>
+        +save(entity: T) void
+        +find_by_id(id: ID) Optional~T~
+        +find_all() List~T~
+        +delete(id: ID) void
+        +exists(id: ID) bool
+        +count() int
+    }
+
+    class UserRepository {
+        <<interface>>
+        +find_by_email(email: str) Optional~User~
+        +find_by_role(role: str) List~User~
+        +find_active_users() List~User~
+    }
+
+    class CourseRepository {
+        <<interface>>
+        +find_by_course_code(course_code: str) Optional~Course~
+        +find_by_department(department: str) List~Course~
+        +find_courses_with_capacity() List~Course~
+    }
+
+    class InMemoryUserRepository {
+        -_storage: Dict[str, User]
+        +save(entity: User) void
+        +find_by_id(id: str) Optional~User~
+        +find_by_email(email: str) Optional~User~
+    }
+
+    class InMemoryCourseRepository {
+        -_storage: Dict[str, Course]
+        +save(entity: Course) void
+        +find_by_id(id: str) Optional~Course~
+    }
+
+    class RepositoryFactory {
+        +get_user_repository(storage_type: str) UserRepository
+        +get_course_repository(storage_type: str) CourseRepository
+        +get_assignment_repository(storage_type: str) AssignmentRepository
+        +get_booking_repository(storage_type: str) BookingRepository
+        +get_event_repository(storage_type: str) EventRepository
+    }
+
+    class DatabaseUserRepository {
+        -_connection_string: str
+        -_connected: bool
+        +__init__(connection_string: str)
+        +save(entity: User) void
+        +find_by_id(id: str) Optional~User~
+    }
+
+    UserRepository --|> Repository
+    CourseRepository --|> Repository
+    InMemoryUserRepository ..|> UserRepository
+    InMemoryCourseRepository ..|> CourseRepository
+    RepositoryFactory --> UserRepository : creates
+    RepositoryFactory --> CourseRepository : creates
+    DatabaseUserRepository ..|> UserRepository
+```
+
+## Key Design Decisions
+
+### Decision 1: Generic Repository Interface
+
+**Decision:** Created a generic `Repository[T, ID]` interface with standard CRUD methods.
+
+**Rationale:** Avoids code duplication across all entity repositories.
+
+---
+
+### Decision 2: Entity-Specific Interfaces
+
+**Decision:** Created separate interfaces for each entity that extend the generic interface.
+
+**Rationale:** Allows adding entity-specific query methods.
+
+---
+
+### Decision 3: Factory Pattern for Storage Abstraction
+
+**Decision:** Used Factory Pattern (`RepositoryFactory`) to create repository instances.
+
+**Rationale:** Makes it easy to switch between different storage backends by changing one parameter.
+
+---
+
+### Decision 4: In-Memory HashMap Storage
+
+**Decision:** Used Python `dict` as the storage mechanism for in-memory repositories.
+
+**Rationale:** Fast for testing and easy to understand.
+
+---
+
+### Decision 5: Future-Proofing with Stub
+
+**Decision:** Created stub implementation for `DatabaseUserRepository`.
+
+**Rationale:** Demonstrates how easy it is to add new storage backends.
