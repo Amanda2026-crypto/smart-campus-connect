@@ -24,3 +24,40 @@
 
 - Updated README.md with language choice and pattern rationales
 - Created CHANGELOG.md
+
+
+---
+
+```markdown
+# Changelog
+
+## [1.2.0] - 2026-05-04
+
+### Added - Assignment 11: Repository Pattern
+
+**Repository Interfaces:**
+- Generic `Repository[T, ID]` interface with CRUD operations
+- Entity-specific interfaces for User, Course, Assignment, Booking, Event
+- 20+ custom query methods (find_by_email, find_by_department, etc.)
+
+**In-Memory Implementations:**
+- HashMap-based storage using Python dict
+- Complete CRUD operations for all entities
+- All custom query methods implemented
+
+**Factory Pattern:**
+- `RepositoryFactory` class for storage abstraction
+- Switch storage via `storage_type` parameter
+- Currently supports "MEMORY" storage
+
+**Future-Proofing:**
+- `DatabaseUserRepository` stub for future database integration
+
+**Unit Tests:**
+- 10+ test cases covering all CRUD operations
+- Factory pattern tests
+- All tests passing
+
+**Documentation:**
+- Updated class diagram with repository layer
+- README justification for design decisions
