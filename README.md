@@ -155,6 +155,29 @@ repo = RepositoryFactory.get_user_repository("MEMORY")
 
 # Future: switch to database
 # repo = RepositoryFactory.get_user_repository("DATABASE")
+
+# Future Storage Backends
+
+| Storage Type | Status |
+|---|---|
+| In-Memory (HashMap) | ✅ Implemented |
+| Database (MySQL/PostgreSQL) | 📝 Stub created |
+| Filesystem (JSON) | 🔜 Future |
+
+# Deliverables
+
+- Repository Interfaces
+- In-Memory Implementations
+- Factory Pattern
+- Future Storage Stub
+- Unit Tests
+- Updated Class Diagram
+
+# Running Tests
+
+```bash
+python -m unittest tests.test_repositories
+```
 ---
 ## Author
 
