@@ -28,9 +28,6 @@
 
 ---
 
-```markdown
-# Changelog
-
 ## [1.2.0] - 2026-05-04
 
 ### Added - Assignment 11: Repository Pattern
@@ -61,4 +58,4 @@
 **Documentation:**
 - Updated class diagram with repository layer
 - README justification for design decisions
-```
+
