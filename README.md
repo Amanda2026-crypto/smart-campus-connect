@@ -130,50 +130,35 @@ Ran 25 tests in 0.006s
 OK
 ```
 
-## Assignment 11: Repository Pattern and Storage Abstraction
+### Assignment 11: Repository Pattern and Storage Abstraction
 
-### Repository Pattern Justification
+**Language:** Python
 
-**Why Repository Pattern?**
+**Repository Pattern Justification:**
 - Separates business logic from storage details
 - Makes it easy to switch between storage backends
 - Simplifies unit testing (use in-memory for tests)
 
-### Storage Abstraction: Factory Pattern
+**Storage Abstraction:** Factory Pattern
 
-**Why Factory Pattern?**
-- Simpler for a solo developer project
-- Centralized repository creation
-- Easy to add new storage types
-
-### How to Switch Storage
-
-```python
-# Use in-memory storage (current)
-repo = RepositoryFactory.get_user_repository("MEMORY")
-```
-
-# Future: switch to database
-# repo = RepositoryFactory.get_user_repository("DATABASE")
-
-# Future Storage Backends
+**Future Storage Backends:**
 
 | Storage Type | Status |
-|---|---|
+|--------------|--------|
 | In-Memory (HashMap) | ✅ Implemented |
 | Database (MySQL/PostgreSQL) | 📝 Stub created |
 | Filesystem (JSON) | 🔜 Future |
 
-# Deliverables
+**Deliverables:**
 
-- Repository Interfaces
-- In-Memory Implementations
-- Factory Pattern
-- Future Storage Stub
-- Unit Tests
-- Updated Class Diagram
+- [Repository Interfaces](src/repositories/)
+- [In-Memory Implementations](src/repositories/inmemory/)
+- [Factory Pattern](src/factories/repository_factory.py)
+- [Future Storage Stub](future_storage/database_repository_stub.py)
+- [Unit Tests](tests/test_repositories.py)
+- [Updated Class Diagram](class_diagram_updated.md)
 
-# Running Tests
+**Running Tests:**
 
 ```bash
 python -m unittest tests.test_repositories
