@@ -129,6 +129,31 @@ python -m unittest discover tests
 Ran 25 tests in 0.006s
 OK
 ```
+
+## Assignment 11: Repository Pattern and Storage Abstraction
+
+### Repository Pattern Justification
+
+**Why Repository Pattern?**
+- Separates business logic from storage details
+- Makes it easy to switch between storage backends
+- Simplifies unit testing (use in-memory for tests)
+
+### Storage Abstraction: Factory Pattern
+
+**Why Factory Pattern?**
+- Simpler for a solo developer project
+- Centralized repository creation
+- Easy to add new storage types
+
+### How to Switch Storage
+
+```python
+# Use in-memory storage (current)
+repo = RepositoryFactory.get_user_repository("MEMORY")
+
+# Future: switch to database
+# repo = RepositoryFactory.get_user_repository("DATABASE")
 ---
 ## Author
 
