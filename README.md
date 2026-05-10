@@ -156,7 +156,7 @@ OK
 - [Factory Pattern](src/factories/repository_factory.py)
 - [Future Storage Stub](future_storage/database_repository_stub.py)
 - [Unit Tests](tests/test_repositories.py)
-- [Updated Class Diagram](class_diagram_updated.md)
+- [Updated Class Diagram](class-diagram.md)
 
 **Running Tests:**
 
