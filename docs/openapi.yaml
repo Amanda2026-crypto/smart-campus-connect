@@ -1,0 +1,445 @@
+openapi: 3.0.0
+info:
+  title: Smart Campus Connect API
+  description: REST API for Smart Campus Connect - Student Lifecycle Management Platform
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+
+paths:
+  /api/users/register:
+    post:
+      summary: Register a new user
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+      responses:
+        201:
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        400:
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/users/login:
+    post:
+      summary: Authenticate a user
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        200:
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        401:
+          description: Invalid credentials
+
+  /api/courses:
+    post:
+      summary: Create a new course
+      tags: [Courses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CourseCreate'
+      responses:
+        201:
+          description: Course created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseResponse'
+        400:
+          description: Invalid input
+
+    get:
+      summary: Get all courses
+      tags: [Courses]
+      parameters:
+        - name: department
+          in: query
+          schema:
+            type: string
+          description: Filter by department
+      responses:
+        200:
+          description: List of courses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CourseResponse'
+
+  /api/courses/{course_id}:
+    get:
+      summary: Get course by ID
+      tags: [Courses]
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Course details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseResponse'
+        404:
+          description: Course not found
+
+    delete:
+      summary: Delete a course
+      tags: [Courses]
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Course deleted successfully
+        404:
+          description: Course not found
+
+  /api/courses/{course_id}/enroll/{student_id}:
+    post:
+      summary: Enroll a student in a course
+      tags: [Courses]
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: student_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Enrollment successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CourseResponse'
+        400:
+          description: Course full or invalid
+
+  /api/assignments:
+    post:
+      summary: Create a new assignment
+      tags: [Assignments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignmentCreate'
+      responses:
+        201:
+          description: Assignment created successfully
+
+  /api/assignments/{assignment_id}/submit:
+    post:
+      summary: Submit an assignment
+      tags: [Assignments]
+      parameters:
+        - name: assignment_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmissionCreate'
+      responses:
+        201:
+          description: Submission successful
+
+  /api/bookings:
+    post:
+      summary: Create a new booking
+      tags: [Bookings]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingCreate'
+      responses:
+        201:
+          description: Booking created successfully
+        400:
+          description: Room not available
+
+  /api/bookings/rooms/available:
+    get:
+      summary: Get available rooms for a time slot
+      tags: [Bookings]
+      parameters:
+        - name: start_time
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: end_time
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        200:
+          description: List of available rooms
+
+components:
+  schemas:
+    UserCreate:
+      type: object
+      required:
+        - user_id
+        - email
+        - password
+        - first_name
+        - last_name
+        - department
+        - role
+      properties:
+        user_id:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+        first_name:
+          type: string
+        last_name:
+          type: string
+        student_id:
+          type: string
+        staff_id:
+          type: string
+        department:
+          type: string
+        role:
+          type: string
+          enum: [STUDENT, FACULTY, ADMIN]
+
+    UserResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        role:
+          type: string
+        is_active:
+          type: boolean
+
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+
+    CourseCreate:
+      type: object
+      required:
+        - course_id
+        - course_name
+        - credits
+        - department
+        - faculty_id
+        - semester
+      properties:
+        course_id:
+          type: string
+        course_name:
+          type: string
+        credits:
+          type: integer
+          minimum: 1
+          maximum: 30
+        department:
+          type: string
+        faculty_id:
+          type: string
+        semester:
+          type: string
+        max_students:
+          type: integer
+          default: 50
+          minimum: 1
+          maximum: 200
+
+    CourseResponse:
+      type: object
+      properties:
+        course_id:
+          type: string
+        course_name:
+          type: string
+        credits:
+          type: integer
+        department:
+          type: string
+        faculty_id:
+          type: string
+        semester:
+          type: string
+        max_students:
+          type: integer
+        enrolled_count:
+          type: integer
+
+    AssignmentCreate:
+      type: object
+      required:
+        - assignment_id
+        - course_id
+        - title
+        - description
+        - due_date
+        - max_points
+      properties:
+        assignment_id:
+          type: string
+        course_id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        due_date:
+          type: string
+          format: date-time
+        max_points:
+          type: integer
+          minimum: 1
+          maximum: 1000
+
+    SubmissionCreate:
+      type: object
+      required:
+        - submission_id
+        - assignment_id
+        - student_id
+        - file_url
+      properties:
+        submission_id:
+          type: string
+        assignment_id:
+          type: string
+        student_id:
+          type: string
+        file_url:
+          type: string
+
+    BookingCreate:
+      type: object
+      required:
+        - booking_id
+        - room_id
+        - student_id
+        - start_time
+        - end_time
+      properties:
+        booking_id:
+          type: string
+        room_id:
+          type: string
+        student_id:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+
+    BookingResponse:
+      type: object
+      properties:
+        booking_id:
+          type: string
+        room_id:
+          type: string
+        student_id:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        status:
+          type: string
+        qr_code:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        status_code:
+          type: integer
