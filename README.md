@@ -163,6 +163,65 @@ OK
 ```bash
 python -m unittest tests.test_repositories
 ```
+
+### Assignment 12: Service Layer and REST API
+
+**Technology Stack:** FastAPI, Uvicorn, Pydantic
+
+**Service Layer Classes:**
+- `UserService` - User registration, login, management
+- `CourseService` - Course CRUD, enrollment
+- `AssignmentService` - Assignment management, submissions, grading
+- `BookingService` - Study room booking
+
+**API Endpoints:**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/users/register` | Register a new user |
+| POST | `/api/users/login` | Authenticate user |
+| GET | `/api/users/{user_id}` | Get user by ID |
+| GET | `/api/users/` | Get all users |
+| DELETE | `/api/users/{user_id}` | Delete user |
+| POST | `/api/courses/` | Create a course |
+| GET | `/api/courses/` | Get all courses |
+| GET | `/api/courses/{course_id}` | Get course by ID |
+| PUT | `/api/courses/{course_id}` | Update course |
+| DELETE | `/api/courses/{course_id}` | Delete course |
+| POST | `/api/courses/{course_id}/enroll/{student_id}` | Enroll student |
+| POST | `/api/assignments/` | Create assignment |
+| POST | `/api/assignments/{assignment_id}/submit` | Submit assignment |
+| POST | `/api/assignments/submissions/{submission_id}/grade` | Grade submission |
+| POST | `/api/bookings/rooms` | Create study room |
+| GET | `/api/bookings/rooms` | Get all study rooms |
+| GET | `/api/bookings/rooms/available` | Get available rooms |
+| POST | `/api/bookings/` | Create booking |
+| GET | `/api/bookings/{booking_id}` | Get booking by ID |
+| DELETE | `/api/bookings/{booking_id}` | Cancel booking |
+
+**Swagger UI Screenshots:**
+
+- [Full Swagger UI Page](swagger-ui-full.png)
+- [Expanded Endpoint](swagger-ui-expanded.png)
+
+**Running the API:**
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the server
+uvicorn src.api.main:app --reload
+
+**API Documentation:** http://localhost:8000/docs (Note: Only works when API is running locally)
+
+**Deliverables:**
+- [Service Layer](src/services/)
+- [API Routes](src/api/routes/)
+- [API Models](src/api/models/)
+- [Swagger Screenshot 1](swagger-ui-full.png)
+- [Swagger Screenshot 2](swagger-ui-expanded.png)
+
 ---
 ## Author
 
