@@ -211,17 +211,12 @@ python -m unittest tests.test_repositories
 pip install -r requirements.txt
 
 # Run the server
-uvicorn src.api.main:app --reload
-
-**API Documentation:** http://localhost:8000/docs (Note: Only works when API is running locally)
-
 **Deliverables:**
 - [Service Layer](src/services/)
 - [API Routes](src/api/routes/)
-- [API Models](src/api/models/)
+- [API Models](src/api/models/schemas.py)
 - [Swagger Screenshot 1](swagger-ui-full.png)
 - [Swagger Screenshot 2](swagger-ui-expanded.png)
----
 ## Author
 
 **Amanda**
