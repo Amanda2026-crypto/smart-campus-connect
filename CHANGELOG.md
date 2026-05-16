@@ -59,3 +59,29 @@
 - Updated class diagram with repository layer
 - README justification for design decisions
 
+
+---
+
+### Added - Assignment 12: Service Layer and REST API
+
+**Service Layer:**
+- `UserService` - Registration, login, user management
+- `CourseService` - Course CRUD, enrollment
+- `AssignmentService` - Assignment management, submissions, grading
+- `BookingService` - Study room booking
+
+**REST API (FastAPI):**
+- 15+ endpoints for users, courses, assignments, bookings
+- OpenAPI/Swagger documentation auto-generated
+- Request/response validation using Pydantic schemas
+
+**Testing:**
+- Unit tests for service layer
+- Integration tests for API endpoints
+
+**Business Rules Implemented:**
+- Email must be @mycput.ac.za
+- Booking duration ≤ 3 hours
+- Cancellation ≥ 1 hour before start
+- Course capacity limits
+- Assignment due date validation
