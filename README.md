@@ -206,15 +206,12 @@ python -m unittest tests.test_repositories
 
 **Running the API:**
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
+**API Documentation:** http://localhost:8000/docs (Note: Only works when API is running locally)
 
-# Run the server
 **Deliverables:**
 - [Service Layer](src/services/)
 - [API Routes](src/api/routes/)
-- [API Models](src/api/models/schemas.py)
+- [API Models](src/api/models/)
 - [Swagger Screenshot 1](swagger-ui-full.png)
 - [Swagger Screenshot 2](swagger-ui-expanded.png)
 ## Author
