@@ -216,11 +216,15 @@ uvicorn src.api.main:app --reload
 **API Documentation:** http://localhost:8000/docs (Note: Only works when API is running locally)
 
 **Deliverables:**
-- [Service Layer](src/services/)
-- [API Routes](src/api/routes/)
-- [API Models](src/api/models/)
-- [Swagger Screenshot 1](swagger-ui-full.png)
-- [Swagger Screenshot 2](swagger-ui-expanded.png)
+Service Layer
+
+API Routes
+
+API Models
+
+Swagger Screenshot 1
+
+Swagger Screenshot 2
 
 ---
 ## Author
