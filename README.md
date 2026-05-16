@@ -164,7 +164,7 @@ OK
 python -m unittest tests.test_repositories
 ```
 
-### Assignment 12: Service Layer and REST API
+## Assignment 12: Service Layer and REST API
 
 **Technology Stack:** FastAPI, Uvicorn, Pydantic
 
