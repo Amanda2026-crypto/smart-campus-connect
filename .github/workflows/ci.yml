@@ -13,4 +13,9 @@ jobs:
       - name: Run a simple test
         run: |
           python -c "assert 1 == 1"
-          echo "All tests passed!"
+          echo "All tests passed!" > test-output.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-output.txt
