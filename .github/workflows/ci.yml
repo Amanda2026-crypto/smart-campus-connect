@@ -1,0 +1,117 @@
+# GitHub Actions CI/CD Pipeline
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Cache pip packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run unit tests
+        run: |
+          python -m pytest tests/test_services.py -v --cov=src/services --cov-report=term
+
+      - name: Run API integration tests
+        run: |
+          python -m pytest tests/test_api.py -v
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            .pytest_cache
+            *.log
+
+  build:
+    name: Build and Package
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build wheel
+
+      - name: Build Python package
+        run: |
+          python -m build
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-campus-connect-package
+          path: |
+            dist/
+            src/
+            requirements.txt
+            README.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Release v1.0.${{ github.run_number }}
+          body: |
+            ## Smart Campus Connect Release v1.0.${{ github.run_number }}
+
+            ### Changes in this release:
+            - Automated CI/CD pipeline implemented
+            - All tests passing
+            - API endpoints functional
+            - Service layer complete
+
+            ### Installation
+
+            ```bash
+            pip install -r requirements.txt
+            uvicorn src.api.main:app --reload
+            ```
+
+          draft: false
+          prerelease: false
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,1 @@
+from src.api.routes import users, courses, assignments, bookings
