@@ -1,6 +1,26 @@
 \# Changelog
 
 
+## [1.4.0] - 2026-05-19
+
+### Added - Assignment 13: CI/CD with GitHub Actions
+
+**Branch Protection:**
+- Main branch protected with PR review requirement
+- Status checks required before merging
+- Direct pushes disabled
+
+**CI Pipeline:**
+- GitHub Actions workflow runs tests on every push/PR
+- Python 3.13 environment setup
+
+**CD Pipeline:**
+- Artifacts uploaded on successful workflow runs
+
+**Documentation:**
+- PROTECTION.md with branch protection justification
+- Updated README with CI/CD instructions
+  
 
 \## \[1.0.0] - 2026-05-02
 
