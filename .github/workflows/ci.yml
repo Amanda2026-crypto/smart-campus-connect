@@ -10,7 +10,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Run a simple test
+      - name: Install dependencies
         run: |
-          python -c "assert 1 == 1"
-          echo "All tests passed!"
+          pip install pytest
+          pip install fastapi uvicorn pydantic httpx email-validator
+      - name: Run tests
+        run: |
+          pytest tests/ -v
