@@ -214,6 +214,30 @@ python -m unittest tests.test_repositories
 - [API Models](src/api/models/)
 - [Swagger Screenshot 1](swagger-ui-full.png)
 - [Swagger Screenshot 2](swagger-ui-expanded.png)
+
+## Assignment 13: CI/CD with GitHub Actions
+
+### Branch Protection
+The `main` branch is protected with the following rules:
+- Require pull request reviews (at least 1 reviewer)
+- Require status checks to pass before merging
+- Disable direct pushes
+
+### CI/CD Pipeline
+GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull request:
+- Sets up Python 3.13
+- Runs tests
+- Uploads artifacts
+
+### Screenshots
+- [Branch Protection Rules](branch-protection-screenshot.png)
+- [Pull Request](pr-screenshot.png)
+- [CI Pipeline Passing](ci-passing-screenshot.png)
+- [Release Artifact](artifact-screenshot.png)
+
+### Files Created
+- [PROTECTION.md](PROTECTION.md)
+- [.github/workflows/ci.yml](.github/workflows/ci.yml)
 ## Author
 
 **Amanda**
