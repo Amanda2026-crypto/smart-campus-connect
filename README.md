@@ -293,7 +293,7 @@ Please read `CONTRIBUTING.md` for details on how to contribute.
 
 ## Roadmap
 
-See `[Roadmap](ROADMAP.md)` for planned features.
+See [Roadmap](ROADMAP.md) for planned features.
 
 ### Assignment 14
 - [Contributing Guidelines](CONTRIBUTING.md)
