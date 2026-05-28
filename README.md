@@ -287,7 +287,7 @@ http://localhost:8000/docs
 
 ## Contributing
 
-Please read `CONTRIBUTING.md` for details on how to contribute.
+Please read [Contributing Guidelines](CONTRIBUTING.md) for details on how to contribute.
 
 ---
 
