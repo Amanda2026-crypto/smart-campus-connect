@@ -239,19 +239,67 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull
 - [PROTECTION.md](PROTECTION.md)
 - [.github/workflows/ci.yml](.github/workflows/ci.yml)
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Prerequisites
+
 - Python 3.13+
 - Git
 
-### Installation
+---
+
+## Installation
 
 ```bash
 git clone https://github.com/Amanda2026-crypto/smart-campus-connect.git
 cd smart-campus-connect
 pip install -r requirements.txt
 ```
+
+---
+
+## Run the API
+
+```bash
+uvicorn src.api.main:app --reload
+```
+
+Then visit:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Features for Contribution
+
+| Feature | Difficulty | Skills Needed |
+|---------|------------|----------------|
+| Web Frontend | Medium | React, Tailwind |
+| Mobile App | Medium | React Native |
+| Database Integration | High | PostgreSQL, SQLAlchemy |
+| Real-time Notifications | Medium | WebSockets, Socket.io |
+| Email Service | Low | SMTP, SendGrid |
+| Analytics Dashboard | Medium | Chart.js, Data Visualization |
+
+---
+
+## Contributing
+
+Please read `CONTRIBUTING.md` for details on how to contribute.
+
+---
+
+## Roadmap
+
+See `ROADMAP.md` for planned features.
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the `LICENSE` file for details.
 
 ## Author
 
