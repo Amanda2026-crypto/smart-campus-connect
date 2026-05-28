@@ -242,3 +242,46 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull
 
 **Amanda**
 
+
+## API Endpoints
+
+The Smart Campus Connect API exposes the following endpoints:
+
+### Health
+| Method | Endpoint   | Description          |
+|--------|------------|----------------------|
+| GET    | `/health`  | Health check         |
+
+### Users
+| Method | Endpoint                    | Description              |
+|--------|-----------------------------|--------------------------|
+| POST   | `/api/users/`               | Register a new user      |
+| GET    | `/api/users/{user_id}`      | Get user by ID           |
+| PUT    | `/api/users/{user_id}`      | Update user details      |
+| DELETE | `/api/users/{user_id}`      | Delete a user            |
+
+### Courses
+| Method | Endpoint                       | Description                |
+|--------|--------------------------------|----------------------------|
+| POST   | `/api/courses/`                | Create a new course        |
+| GET    | `/api/courses/{course_id}`     | Get course by ID           |
+| PUT    | `/api/courses/{course_id}`     | Update course details      |
+| DELETE | `/api/courses/{course_id}`     | Delete a course            |
+
+### Assignments
+| Method | Endpoint                             | Description                     |
+|--------|--------------------------------------|---------------------------------|
+| POST   | `/api/assignments/`                  | Create a new assignment         |
+| GET    | `/api/assignments/{assignment_id}`   | Get assignment by ID            |
+| PUT    | `/api/assignments/{assignment_id}`   | Update assignment               |
+| POST   | `/api/assignments/{assignment_id}/submit` | Submit an assignment      |
+
+### Study Rooms & Bookings
+| Method | Endpoint                        | Description                  |
+|--------|---------------------------------|------------------------------|
+| GET    | `/api/rooms/`                   | List available study rooms   |
+| POST   | `/api/bookings/`                | Create a room booking        |
+| GET    | `/api/bookings/{booking_id}`    | Get booking by ID            |
+| DELETE | `/api/bookings/{booking_id}`    | Cancel a booking             |
+
+For full API documentation, refer to the Swagger UI at `/docs` when the server is running.
