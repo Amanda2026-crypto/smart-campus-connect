@@ -238,6 +238,21 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull
 ### Files Created
 - [PROTECTION.md](PROTECTION.md)
 - [.github/workflows/ci.yml](.github/workflows/ci.yml)
+
+## Getting Started
+
+### Prerequisites
+- Python 3.13+
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/Amanda2026-crypto/smart-campus-connect.git
+cd smart-campus-connect
+pip install -r requirements.txt
+
+
 ## Author
 
 **Amanda**
