@@ -251,7 +251,7 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and pull
 git clone https://github.com/Amanda2026-crypto/smart-campus-connect.git
 cd smart-campus-connect
 pip install -r requirements.txt
-
+```
 
 ## Author
 
