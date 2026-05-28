@@ -2,6 +2,11 @@
 Course Service - Business logic for course operations
 """
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from typing import Optional, List
 from src.domain.course import Course
 from src.repositories.course_repository import CourseRepository
@@ -14,7 +19,8 @@ class CourseService:
     def __init__(self, storage_type: str = "MEMORY"):
         self.course_repo = RepositoryFactory.get_course_repository(storage_type)
     
-    def create_course(self, course_id: str, course_name: str, credits: int,
+    def create_course(self
+        logger.info(f"Creating course: {course_name}"), course_id: str, course_name: str, credits: int,
                       department: str, faculty_id: str, semester: str,
                       max_students: int = 50) -> Course:
         """Create a new course"""

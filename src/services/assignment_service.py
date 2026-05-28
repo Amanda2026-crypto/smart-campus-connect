@@ -2,6 +2,11 @@
 Assignment Service - Business logic for assignment operations
 """
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from typing import Optional, List
 from datetime import datetime
 from src.domain.assignment import Assignment, Submission
@@ -16,7 +21,8 @@ class AssignmentService:
         self.assignment_repo = RepositoryFactory.get_assignment_repository(storage_type)
         self.submission_repo = RepositoryFactory.get_submission_repository(storage_type)
     
-    def create_assignment(self, assignment_id: str, course_id: str, title: str,
+    def create_assignment(self
+        logger.info(f"Creating assignment"), assignment_id: str, course_id: str, title: str,
                           description: str, due_date: datetime, max_points: int) -> Assignment:
         """Create a new assignment"""
         # Business rule: Due date cannot be in the past
