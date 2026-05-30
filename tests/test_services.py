@@ -79,6 +79,27 @@ class TestCourseService(unittest.TestCase):
         self.assertIsNotNone(course)
         self.assertEqual(course._course_name, "Databases")
 
+    def test_get_course_by_id_not_found(self):
+        course = self.course_service.get_course_by_id("FAKE_ID")
+        self.assertIsNone(course)
+
+    def test_get_courses_by_department(self):
+        self.course_service.create_course(
+            "CS101", "Intro to Python", 15, "CS", "FAC001", "Semester 1 2026"
+        )
+        self.course_service.create_course(
+            "CS102", "Data Structures", 15, "CS", "FAC001", "Semester 1 2026"
+        )
+        self.course_service.create_course(
+            "BIO101", "Intro to Biology", 10, "BIO", "FAC002", "Semester 1 2026"
+        )
+        cs_courses = self.course_service.get_courses_by_department("CS")
+        self.assertEqual(len(cs_courses), 2)
+        self.assertEqual(cs_courses[0].course_id, "CS101")
+        self.assertEqual(cs_courses[0]._course_name, "Intro to Python")
+        math_courses = self.course_service.get_courses_by_department("MATH")
+        self.assertEqual(len(math_courses), 0)
+
 
 class TestAssignmentService(unittest.TestCase):
     
