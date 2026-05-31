@@ -45,6 +45,24 @@ class TestUserService(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.user_service.login("wrongpass@mycput.ac.za", "wrong")
 
+    def test_register_student_short_password(self):
+        with self.assertRaises(ValueError):
+            self.user_service.register_student(
+                "STU005", "student5@mycput.ac.za", "123",
+                "John", "Doe", "123457", "CS"
+            )
+
+    def test_register_student_empty_student_id(self):
+        with self.assertRaises(ValueError):
+            self.user_service.register_student(
+                "STU008", "student8@mycput.ac.za", "securepass123",
+                "John", "Doe", "   ", "CS"
+            )
+
+    def test_login_non_existent_email(self):
+        with self.assertRaises(ValueError):
+            self.user_service.login("notfound@mycput.ac.za", "anypass")
+
 
 class TestCourseService(unittest.TestCase):
     
