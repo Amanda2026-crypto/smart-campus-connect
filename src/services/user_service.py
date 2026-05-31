@@ -25,6 +25,12 @@ class UserService:
         if not email.endswith("@mycput.ac.za"):
             raise ValueError("Email must be a valid CPUT email address (@mycput.ac.za)")
         
+        if not student_id or not student_id.strip():
+            raise ValueError("Student ID cannot be empty")
+
+        if len(password) < 6:
+            raise ValueError("Password must be at least 6 characters long")
+
         # Business rule: Student ID must be unique
         existing = self.student_repo.find_by_student_id(student_id)
         if existing:
@@ -49,6 +55,9 @@ class UserService:
         existing = self.faculty_repo.find_by_staff_id(staff_id)
         if existing:
             raise ValueError(f"Faculty with staff ID {staff_id} already exists")
+        
+        if not staff_id or not staff_id.strip():
+            raise ValueError("Staff ID cannot be empty")
         
         faculty = Faculty(user_id, email, password, first_name, last_name, staff_id, department)
         self.faculty_repo.save(faculty)
