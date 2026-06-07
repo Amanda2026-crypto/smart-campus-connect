@@ -79,6 +79,46 @@ class TestCourseService(unittest.TestCase):
         self.assertIsNotNone(course)
         self.assertEqual(course._course_name, "Databases")
 
+    def test_create_course_negative_credits(self):
+        with self.assertRaises(ValueError):
+            self.course_service.create_course(
+            "CS104", "Networks", -1,
+            "CS", "FAC001", "Semester 1 2026"
+        )
+
+    def test_create_course_invalid_max_students(self):
+        with self.assertRaises(ValueError):
+         self.course_service.create_course(
+            "CS105", "Security", 15,
+            "CS", "FAC001", "Semester 1 2026",
+            0
+        )
+
+    def test_delete_course(self):
+        self.course_service.create_course(
+        "CS106", "AI Fundamentals", 15,
+        "CS", "FAC001", "Semester 1 2026"
+        )
+
+        result = self.course_service.delete_course("CS106")
+
+        self.assertTrue(result)
+
+    def test_update_course_name(self):
+        self.course_service.create_course(
+        "CS107", "Old Course", 15,
+        "CS", "FAC001", "Semester 1 2026"
+    )
+
+        course = self.course_service.update_course(
+        "CS107",
+        course_name="New Course"
+        )
+
+        self.assertEqual(course.course_name, "New Course")
+
+    
+
 
 class TestAssignmentService(unittest.TestCase):
     
