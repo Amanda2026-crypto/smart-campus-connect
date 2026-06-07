@@ -45,6 +45,24 @@ class TestUserService(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.user_service.login("wrongpass@mycput.ac.za", "wrong")
 
+    def test_register_student_short_password(self):
+        with self.assertRaises(ValueError):
+            self.user_service.register_student(
+                "STU005", "student5@mycput.ac.za", "123",
+                "John", "Doe", "123457", "CS"
+            )
+
+    def test_register_student_empty_student_id(self):
+        with self.assertRaises(ValueError):
+            self.user_service.register_student(
+                "STU008", "student8@mycput.ac.za", "securepass123",
+                "John", "Doe", "   ", "CS"
+            )
+
+    def test_login_non_existent_email(self):
+        with self.assertRaises(ValueError):
+            self.user_service.login("notfound@mycput.ac.za", "anypass")
+
 
 class TestCourseService(unittest.TestCase):
     
@@ -79,6 +97,26 @@ class TestCourseService(unittest.TestCase):
         self.assertIsNotNone(course)
         self.assertEqual(course._course_name, "Databases")
 
+    def test_get_course_by_id_not_found(self):
+        course = self.course_service.get_course_by_id("FAKE_ID")
+        self.assertIsNone(course)
+
+    def test_get_courses_by_department(self):
+        self.course_service.create_course(
+            "CS101", "Intro to Python", 15, "CS", "FAC001", "Semester 1 2026"
+        )
+        self.course_service.create_course(
+            "CS102", "Data Structures", 15, "CS", "FAC001", "Semester 1 2026"
+        )
+        self.course_service.create_course(
+            "BIO101", "Intro to Biology", 10, "BIO", "FAC002", "Semester 1 2026"
+        )
+        cs_courses = self.course_service.get_courses_by_department("CS")
+        self.assertEqual(len(cs_courses), 2)
+        self.assertEqual(cs_courses[0].course_id, "CS101")
+        self.assertEqual(cs_courses[0]._course_name, "Intro to Python")
+        math_courses = self.course_service.get_courses_by_department("MATH")
+        self.assertEqual(len(math_courses), 0)
     def test_create_course_negative_credits(self):
         with self.assertRaises(ValueError):
             self.course_service.create_course(
