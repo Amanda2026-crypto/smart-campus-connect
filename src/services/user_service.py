@@ -2,6 +2,11 @@
 User Service - Business logic for user operations
 """
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from typing import Optional, List
 from src.domain.user import User, Student, Faculty, Admin
 from src.repositories.user_repository import UserRepository, StudentRepository, FacultyRepository, AdminRepository

@@ -2,6 +2,11 @@
 Booking Service - Business logic for study room booking operations
 """
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from typing import Optional, List
 from datetime import datetime, timedelta
 from src.domain.booking import StudyRoom, Booking
@@ -42,7 +47,8 @@ class BookingService:
         
         return self.study_room_repo.find_available_rooms(start_time, end_time)
     
-    def create_booking(self, booking_id: str, room_id: str, student_id: str,
+    def create_booking(self
+        logger.info(f"Creating booking"), booking_id: str, room_id: str, student_id: str,
                        start_time: datetime, end_time: datetime) -> Booking:
         """Create a new booking"""
         # Business rule: Check room exists
