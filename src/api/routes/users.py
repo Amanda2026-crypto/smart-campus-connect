@@ -4,6 +4,7 @@ User API routes
 
 from fastapi import APIRouter, HTTPException, status
 from typing import List
+import re
 from src.api.models.schemas import (
     UserCreate, UserResponse, LoginRequest, LoginResponse, ErrorResponse
 )
@@ -13,9 +14,51 @@ router = APIRouter(prefix="/api/users", tags=["Users"])
 user_service = UserService()
 
 
+def validate_user_registration(user_data: UserCreate):
+    """Validate user registration input data"""
+    
+    # Validate user_id
+    if not user_data.user_id or not user_data.user_id.strip():
+        raise HTTPException(status_code=400, detail="User ID cannot be empty")
+    
+    # Validate password
+    if not user_data.password or len(user_data.password) < 8:
+        raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
+    
+    if not any(c.isdigit() for c in user_data.password):
+        raise HTTPException(status_code=400, detail="Password must contain at least one number")
+    
+    if not any(c.isalpha() for c in user_data.password):
+        raise HTTPException(status_code=400, detail="Password must contain at least one letter")
+    
+    # Validate first name
+    if not user_data.first_name or not user_data.first_name.strip():
+        raise HTTPException(status_code=400, detail="First name cannot be empty")
+    
+    if len(user_data.first_name) > 50:
+        raise HTTPException(status_code=400, detail="First name cannot exceed 50 characters")
+    
+    # Validate last name
+    if not user_data.last_name or not user_data.last_name.strip():
+        raise HTTPException(status_code=400, detail="Last name cannot be empty")
+    
+    if len(user_data.last_name) > 50:
+        raise HTTPException(status_code=400, detail="Last name cannot exceed 50 characters")
+    
+    # Validate department
+    if not user_data.department or not user_data.department.strip():
+        raise HTTPException(status_code=400, detail="Department cannot be empty")
+    
+    return True
+
+
 @router.post("/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def register_user(user_data: UserCreate):
     """Register a new user (student, faculty, or admin)"""
+    
+    # Validate input before processing
+    validate_user_registration(user_data)
+    
     try:
         if user_data.role == "STUDENT":
             if not user_data.student_id:
