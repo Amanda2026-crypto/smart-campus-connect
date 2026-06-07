@@ -4,9 +4,31 @@ A unified student lifecycle management platform for academic tracking, campus na
 
 ---
 
+
 ## Introduction
 
 Smart Campus Connect is a comprehensive platform that combines academic tracking, campus navigation, event discovery, and social features into one unified application for university students, faculty, and staff.
+
+---
+
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#what-it-will-do-once-completed)
+- [Technology Stack](#technology-stack)
+- [Documentation](#documentation)
+  - [Assignments 3-14](#assignment-3)
+  - [Assignment 10: Design Patterns](#assignment-10-creational-design-patterns)
+  - [Assignment 11: Repository Pattern](#assignment-11-repository-pattern-and-storage-abstraction)
+  - [Assignment 12: REST API](#assignment-12-service-layer-and-rest-api)
+  - [Assignment 13: CI/CD](#assignment-13-cicd-with-github-actions)
+- [Getting Started](#getting-started)
+- [Running the API](#run-the-api)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+
 
 ---
 
@@ -45,6 +67,23 @@ Smart Campus Connect is a comprehensive platform that combines academic tracking
 | Real-time | Socket.io |
 | Maps | Google Maps API |
 | Authentication | JWT + OAuth2 |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.13+
+- Git
+- pip
+
+### Installation
+
+```bash
+git clone https://github.com/Amanda2026-crypto/smart-campus-connect.git
+cd smart-campus-connect
+pip install -r requirements.txt
 
 ---
 
